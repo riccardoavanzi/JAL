@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Airlines - Homepage - Premium flights from/to Japan and to the world</title>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- OPEN AI APIs -->
+    <script src="https://cdn.jsdelivr.net/npm/openai"></script>
+    <script src="./calendar/2024_data.js"></script>
+    <script src="./airports/airports.js"></script>
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- IMPORT ICONS CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="css/vibrant.css">
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- FLAGS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+    <!-- CLARITY -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "pq938y9786");
+    </script>
+    <!-- Cookies -->
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="be44aa24-c268-4f82-bb69-6fb8544e5a98" data-blockingmode="auto" type="text/javascript"></script>
+</head>
+<body id="body">
+
+        <!-- ============ MODALS -->
+
+        <!-- CREATE LOYALTY MODAL -->
+        <div class="modal fade" id="createLoyaltyModal" tabindex="-1" aria-labelledby="createLoyaltyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createLoyaltyModalLabel">
+                    Join Lotus Miles
+                    </h5>
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- STEP INDICATOR -->
+                    <div class="step-indicator">
+                    <div class="step step-active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span class="step-label">Name / Email / Password</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span class="step-label">Picture &amp; Contact</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span class="step-label">Accept Terms</span>
+                    </div>
+                    </div>
+
+                    <!-- STEP 1 -->
+                    <div class="form-step active" id="step1">
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Full Name</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="inputName"
+                        placeholder="Enter your name"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email address</label>
+                        <input
+                        type="email"
+                        class="form-control"
+                        id="inputEmail"
+                        placeholder="Enter your email"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Password</label>
+                        <input
+                        type="password"
+                        class="form-control"
+                        id="inputPassword"
+                        placeholder="Enter a password"
+                        />
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(2)">Next</button>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="form-step" id="step2">
+                    <div class="mb-3">
+                        <label for="inputPicture" class="form-label">Upload Picture</label>
+                        <input
+                        type="file"
+                        class="form-control"
+                        id="inputPicture"
+                        accept="image/*"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputContact" class="form-label">Contact Number</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="inputContact"
+                        placeholder="Enter your phone number"
+                        />
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+                    <button class="btn btn-primary" onclick="goToStep(3)">Next</button>
+                    </div>
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="form-step" id="step3">
+                    <div class="form-check mb-4">
+                        <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="checkTerms"
+                        />
+                        <label class="form-check-label" for="checkTerms">
+                        I agree to the <a href="#">terms and conditions</a>.
+                        </label>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+                    <button class="btn btn-success" onclick="finishRegistration()">
+                    </div>
+                        Finish
+                    </button>
+                    </div>
+
+                    <!-- SUMMARY SECTION -->
+                    <div id="summarySection" class="mt-4">
+                    <h3>Registration Successful!</h3>
+                    <p>Below is your profile recap:</p>
+                    <ul>
+                        <li><strong>Name:</strong> <span id="summaryName"></span></li>
+                        <li><strong>Email:</strong> <span id="summaryEmail"></span></li>
+                        <li><strong>Contact:</strong> <span id="summaryContact"></span></li>
+                        <li><strong>Picture File Name:</strong> <span id="summaryPicture"></span></li>
+                    </ul>
+                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+            
+        <!-- REQUIREMENTS MODAL -->
+        <!-- Modal -->
+        <div class="modal fade" id="requirementsModal" tabindex="-1" aria-labelledby="requirementsModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="requirementsModalLabel">Website Requirements</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped table-bordered">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Requirement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Overall view of the home page</td><td>1.2</td></tr>
+                                <tr><td>– Header</td><td>1.2.1</td></tr>
+                                <tr><td>– Booking magnet</td><td>1.2.2</td></tr>
+                                <tr><td>– Informative areas</td><td>1.2.3</td></tr>
+                                <tr><td>– Corporate banners</td><td>2.1.1</td></tr>
+                                <tr><td>– Standard cards</td><td>2.1.2</td></tr>
+                                <tr><td>– Destinations</td><td>2.1.3</td></tr>
+                                <tr><td>– Cross-sell</td><td>2.2</td></tr>
+                                <tr><td>– Banners</td><td>2.3</td></tr>
+                                <tr><td>– Footer</td><td>2.3</td></tr>
+                                <tr><td>– Cookie Management</td><td>2.3</td></tr>
+                                <tr><td>Responsive version of the website</td><td>2.4</td></tr>
+                                <tr><td>Homepage alternative (more traditional -> not suggested according to VN style)</td><td>1.3</td></tr>
+                                <tr><td>Search feature</td><td>4.1.1</td></tr>
+                                <tr><td>Profile creation process</td><td>2.3</td></tr>
+                                <tr><td>Profile page -> details showcase -> highlight preferred ancillary service</td><td>2.3</td></tr>
+                                <tr><td>Focus on ancillary service component (standard)</td><td>—</td></tr>
+                                <tr><td>Login process</td><td>2.3</td></tr>
+                                <tr><td>Showcase the change of Ancillary Component</td><td>2.4</td></tr>
+                                <tr><td>Showcase the recent searches</td><td>2.4</td></tr>
+                                <tr><td>Launch booking</td><td>—</td></tr>
+                                <tr><td>Lotus miles page</td><td>2.2 / 1.10</td></tr>
+                                <tr><td>Lotus miles history</td><td>2.2 / 1.10</td></tr>
+                                <tr><td>Lotus miles change password</td><td>2.2 / 1.10</td></tr>
+                                <tr><td>Lotus miles calculator</td><td>2.2 / 1.10</td></tr>
+                                <tr><td>Explore page</td><td>—</td></tr>
+                                <tr><td>AI Destination page</td><td>3.23</td></tr>
+                                <tr><td>Destination page 2 -> change to Viet language</td><td>3.23</td></tr>
+                                <tr><td>Responsiveness</td><td>2.4</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAX-CLASS MODAL -->
+        <div class="modal fade" id="pax-class" tabindex="-1" aria-labelledby="paxmodal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="pax-modal-title">Passengers and cabin selection</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="pax-container">
+                        <!-- ADULT -->
+                        <div class="pax-item">
+                            <div class="pax-type">
+                                <div class="pax-label">
+                                    <h5>Adult</h5>
+                                </div>
+                                <div class="pax-detail">
+                                    <p>12 years and up</p>
+                                </div>
+                            </div>
+                            <div class="counter-container">
+                                <button class="remove" onclick="updateCount('adult', -1)">
+                                    <i class='bx bx-minus'></i>
+                                </button>
+                                <div class="pax-number" id="adult-count">0</div>
+                                <button class="add" onclick="updateCount('adult', 1)">
+                                    <i class='bx bx-plus'></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- CHILD -->
+                        <div class="pax-item">
+                            <div class="pax-type">
+                                <div class="pax-label">
+                                    <h5>Child</h5>
+                                </div>
+                                <div class="pax-detail">
+                                    <p>Ages 2 - 11</p>
+                                </div>
+                            </div>
+                            <div class="counter-container">
+                                <button class="remove" onclick="updateCount('child', -1)">
+                                    <i class='bx bx-minus'></i>
+                                </button>
+                                <div class="pax-number" id="child-count">0</div>
+                                <button class="add" onclick="updateCount('child', 1)">
+                                    <i class='bx bx-plus'></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- INFANT -->
+                        <div class="pax-item">
+                            <div class="pax-type">
+                                <div class="pax-label">
+                                    <h5>Infant</h5>
+                                </div>
+                                <div class="pax-detail">
+                                    <p>Below 2 years old</p>
+                                </div>
+                            </div>
+                            <div class="counter-container">
+                                <button class="remove" onclick="updateCount('infant', -1)">
+                                    <i class='bx bx-minus'></i>
+                                </button>
+                                <div class="pax-number" id="infant-count">0</div>
+                                <button class="add" onclick="updateCount('infant', 1)">
+                                    <i class='bx bx-plus'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="cabins-container">
+                    <form action="" class="cabins">
+                        <div class="cabin-item">
+                            <input type="radio" value="economy" id="eco-cabin">
+                            <label class="eco-label" for="eco-cabin">Economy</label>
+                        </div>
+                        <div class="cabin-item">
+                            <input type="radio" value="business" id="business-cabin">
+                            <label class="eco-label" for="eco-cabin">Business</label>
+                        </div>
+                        <div class="cabin-item">
+                            <input type="radio" value="first" id="first-cabin">
+                            <label class="eco-label" for="eco-cabin">First</label>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                  <button type="button" class="btn btn-primary">Continue</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!-- CALENDAR PICKER MODAL -->
+        <!-- Date Picker Modal -->
+        <div id="datePickerModal" class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Pick your dates</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- TOGGLE AREA -->
+                        <!-- <div class="toggle-container">
+                            <div class="toggle-content">
+                                <button id="OW">One way</button>
+                                <button id="RT">Round trip</button>
+                            </div>
+                        </div> -->
+                        <!-- CALENDAR CAROUSEL CONTAINER -->
+                            <div id="calendar-container">
+                                <div class="swiper mySwiper">
+                                    <div class="swiper-wrapper" id="calendar"></div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                                <!-- <div class="prev">
+                                    <button id="next-btn">
+                                        <i class='bx bx-chevron-left'></i>
+                                    </button>
+                                </div> -->
+                                <!-- <div class="next">
+                                    <button id="next-btn">
+                                        <i class='bx bx-chevron-right'></i>
+                                    </button>
+                                </div> -->
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- DATES RECAP -->
+                        <div class="dates-recap">
+                            <div id="departure-recap">
+                                <label for="">Departure</label>
+                                <p id="departure-date-recap">-</p>
+                            </div>
+                            <div id="return-recap">
+                                <label for="">Return</label>
+                                <p id="return-date-recap">-</p>
+                            </div>
+                        </div>
+                        <!-- CONTINUE BUTTON -->
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+          <!-- Search modal Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="searchModalLabel">Search in the website</h1>
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Search Input -->
+                    <div class="mb-3 d-flex flex-column align-items-center">
+                        <label for="">What are you looking for?</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="searchInput"
+                        placeholder="Type here your search"
+                        onkeyup="searchFaqs()"
+                        style="margin-top: 1rem;"
+                    />
+                    </div>
+                    <div id="resultsArea">
+                        <!-- Suggested results -->
+                        <div id="suggested-results">
+                        <div class="results mb-3">
+                            <h4>Suggested results</h4>
+                            <!-- Highlighted results go here -->
+                            <div id="highlightedResults"></div>
+                        </div>
+                        <button class="btn btn-light" id="more-results" onclick="showMoreResults()">See more results</button>
+                        </div>
+            
+                        <!-- Users often look for -->
+                        <div id="users-oriented-results" class="mt-4">
+                        <div class="results">
+                            <h4>Users often search for</h4>
+                            <!-- 3 Cards in a horizontal layout -->
+                            <div class="d-flex flex-row gap-3" id="usersSearchCards">
+                            <!-- Cards will be populated by JS -->
+                            </div>
+                        </div>
+                        <button class="btn btn-light mt-2" id="more-user-results">
+                            See more results
+                        </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CHAT -->
+        <div id="chat-container">
+            <!-- Button to trigger requirement modal -->
+            <!-- <button type="button" class="btn btn-tertiary mt-3" data-bs-toggle="modal" data-bs-target="#requirementsModal">
+                Req.
+            </button> -->
+            <div class="chat-buttons">
+                <div class="label"><p>How can we help you?</p></div>
+                <div class="button-container">
+                    <button id="displayChat" onclick="displayChat()">
+                        <img src="assets/img/logo/favicon.png" width="32px" height="32px" alt="airline-logo-chat">
+                    </button>
+                </div>
+            </div>
+            <div id="chat-dialogue">
+                <div class="chat-dialogue-header">
+                    <div class="status">
+                        <div class="img">
+                            <img src="assets/img/logo/favicon.png" alt="airline logo">
+                        </div>
+                        <div class="name">
+                            <h6>Japan Airlines</h6>
+                            <div class="label">
+                                <div class="dot"></div>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="close">
+                        <button id="close-chat" onclick="closeChat()"><i class='bx bx-chevron-down'></i></button>
+                    </div>
+                </div>
+                <div class="chat-dialogue-body">
+                    <div class="user-input">
+                        <div class="user-input-content">
+                            <div class="u-message"></div>
+                            <div class="timing"></div>
+                        </div>
+                    </div>
+                    <div class="response">
+                        <div class="response-content">
+                            <div class="b-message"></div>
+                            <div class="timing"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-dialogue-input">
+                    <input id="user-input-message" type="text" placeholder="Type your message">
+                    <div class="send">
+                        <button>
+                            <i class='bx bxs-send' ></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LOGIN MODAL -->
+        <div class="modal fade" tabindex="-1" id="login-modal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Login to your JAL Mileage account</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                      <input type="username" class="name" id="username" placeholder="your email here">
+                      <input type="password" class="pwd" id="password" placeholder="your password">
+                  </form>
+                  <div class="links">
+                    <a href="#">Forgot the credentials?</a>
+                    <a href="#">Already have an account?</a>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Discard</button>
+                  <button type="button" class="btn btn-primary" onclick="login(), showLogin()" data-bs-dismiss="modal" id="login-trigger">Login</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- MOBILE MENU -->
+        <div class="modal fade" id="mobilemenu">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <li>Book</li>
+                            <li>Manage</li>
+                            <li>Explore</li>
+                            <li><a href="./destinations.html">Destinations</a></li>
+                            <li><a href="./content.html">Contact</a></li>
+                            <li class="d-flex align-items-center p-2">
+                                <i class='bx bx-search' ></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEWS -->
+        <div class="news-top">
+            <div class="news-top-container">
+                <i class='bx bxs-info-circle'></i>
+                <div class="text">
+                    <p class="notice">フライトのお知らせ</p>
+                    <p id="news-text">2024年に新ターミナルがオープン：リリースノートはウェブサイトの専用セクションでご覧いただけます。</p>    
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER CONTAINER -->
+        <!-- ヘッダーコンテナ -->
+        <div class="container-fluid header_container">
+            <!-- ヘッダーコンテンツ -->
+            <div class="container header_content">
+                <!-- ナビゲーションバー -->
+                <nav class="navbar navbar-expand-lg nav_container" id="navigationbar">
+                    <!-- ナビゲーションバーの内容 -->
+                    <div class="container">
+                        <!-- ロゴ -->
+                        <a href="#" class="navbar-brand">
+                            <img src="assets/img/logo/logo_white.png" alt="ロゴ" id="airline_logo">
+                        </a>
+                        <div class="d-flex align-items-center">
+                            <div class="dropdown" id="language-dropdown-container-mobile">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class='bx bx-world'></i>
+                                </button>
+                                <ul class="dropdown-menu" id="langListMobile" aria-labelledby="languageDropdown">
+                                    <li>
+                                        <button class="dropdown-item" id="en" onclick="translateEN()"><span class="fi fi-gb"></span> 英語</button>
+                                        <button class="dropdown-item" id="fr" onclick="translateFR()"><span class="fi fi-fr"></span> フランス語</button>
+                                        <button class="dropdown-item" id="de" onclick="translateDE()"><span class="fi fi-de"></span> ドイツ語</button>
+                                        <button class="dropdown-item" id="kr" onclick="translateKR()"><span class="fi fi-kr"></span> 韓国語</button>
+                                        <button class="dropdown-item" id="zh" onclick="translateZH()"><span class="fi fi-cn"></span> 中国語</button>
+                                        <a class="dropdown-item" href="indexRTL.html" id="RTL"><span class="fi fi-ae"></span> アラビア語</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- ハンバーガーメニューのボタン -->
+                            <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#mobilemenu">
+                                <span>
+                                    <i class='bx bx-menu-alt-right'></i>
+                                </span>
+                            </button>
+                        </div>
+
+                        <!-- デスクトップ用メニュー -->
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav ms-auto menu">
+                                <li class="nav-item">
+                                    <a href="index.html" id="book" class="nav-link">予約</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" id="manage" class="nav-link">管理</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="destinations.html" id="destinations" class="nav-link">目的地を探す</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="loyalty.html" id="help" class="nav-link">JALマイレージバンク</a>
+                                </li>
+                                <li class="nav-item" id="mytrips">
+                                    <a href="trips.html" id="help" class="nav-link">マイトリップ</a>
+                                </li>
+                                <li class="nav-item" id="lang">
+                                    <div class="dropdown" id="language-dropdown-container">
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class='bx bx-world'></i>
+                                        </button>
+                                        <ul class="dropdown-menu" id="langList" aria-labelledby="languageDropdown">
+                                            <li>
+                                                <a class="dropdown-item" href="index.html"><span class="fi fi-gb"></span> 英語</a>
+                                                <button class="dropdown-item" id="fr" onclick="translateFR()"><span class="fi fi-fr"></span> フランス語</button>
+                                                <button class="dropdown-item" id="de" onclick="translateDE()"><span class="fi fi-de"></span> ドイツ語</button>
+                                                <button class="dropdown-item" id="zh" onclick="translateZH()"><span class="fi fi-cn"></span> 中国語</button>
+                                                <a class="dropdown-item" href="indexKR.html"><span class="fi fi-kr"></span> 韓国語</a>
+                                                <a class="dropdown-item" href="indexRTL.html" id="RTL"><span class="fi fi-ae"></span> アラビア語</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="nav-item" id="search-magnet">
+                                    <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                        <i class='bx bx-search'></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item" id="avatar">
+                                    <div id="avatarcontainer">
+                                        <div id="avatarpic">
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="btn btn-primary" id="login-btn" data-bs-toggle="modal" data-bs-target="#login-modal">
+                                        ログイン
+                                    </button>
+                                    <button class="btn btn-primary" id="logout-btn" onclick="logout()">
+                                        ログアウト
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>                   
+                    </div>
+                </nav>
+
+                <!-- ヒーローセクション -->
+                <div class="container hero_container">
+                    <div class="card col-9 hero_content">
+                        <div class="card-body d-flex justify-content-between">
+                            <div>
+                                <h1 class="card-title">JALで世界へ飛び立とう。</h1>
+                                <p class="card-text">何百もの目的地へ、たった3クリックで。<br> 今すぐ次の冒険を予約しましょう。</p>
+                            </div>
+                            <button class="btn btn-secondary btn-lg">探検する</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MUTLIPURPOSE_COMPONENT DESKTOP -->
+        <!-- マルチパーパスコンポーネント（デスクトップ） -->
+        <div class="container-fluid multipurpose_component_desktop">
+            <div class="tabs">
+                <ul class="nav nav-pills d-flex" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-search" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="hide()">フライトを予約</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-mmb" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="hideCookiesSearch()">予約の管理</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-ssci" type="button" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="hideCookiesSearch()">チェックイン</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-status" type="button" role="tab" aria-controls="pills-contact" aria-selected="false" onclick="hideCookiesSearch()">フライト状況</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="mlt_container">
+                <div class="mlt_content">
+                    <div class="tab-content" id="pills-tabContent">
+                        <!-- フライト検索 -->
+                        <div class="tab-pane fade show active" id="pills-search" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="search_container" id="search">
+                                <ul class="criteria">
+                                    <li class="d-flex flex-column">
+                                        <label for="">出発地</label>
+                                        <input type="text" placeholder="出発地" id="departureInput">
+                                    </li>
+                                    <li class="d-flex flex-column">
+                                        <label for="">目的地</label>
+                                        <input type="text" placeholder="目的地" id="arrivalInput">
+                                    </li>
+                                    <li class="d-flex flex-column">
+                                        <label for="">日程</label>
+                                        <button id="cal" data-bs-toggle="modal" data-bs-target="#datePickerModal">20/11 - 22/11</button>
+                                    </li>
+                                    <li class="d-flex flex-column">
+                                        <label for="">乗客数・座席クラス</label>
+                                        <button id="pax" data-bs-toggle="modal" data-bs-target="#pax-class">
+                                            <div id="pax-recap">--</div>
+                                            <div id="cabin-recap"></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <button type="submit" class="submit" id="launchSearch" onclick="launchRefX()">
+                                    <i class='bx bxs-plane-take-off' style='color:#ffffff'></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 予約の管理 -->
+                        <div class="tab-pane fade" id="pills-mmb" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="mmb_container" id="mmb">
+                                <ul class="criteria">
+                                    <li>
+                                        <input type="text" placeholder="姓">
+                                    </li>
+                                    <li>
+                                        <a href="#" data-bs-toggle="tooltip" title="予約番号は6桁の英数字コードです" customClass="tooltips">
+                                            <i class='bx bxs-info-circle' style='color:#8a8a8a'></i>
+                                        </a>
+                                        <input type="text" placeholder="予約番号">
+                                    </li>
+                                </ul>
+                                <button type="submit" class="submit">
+                                    <i class='bx bx-right-arrow-alt' style='color:#ffffff'></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- チェックイン -->
+                        <div class="tab-pane fade" id="pills-ssci" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="ssci_container" id="ssci">
+                                <ul class="criteria">
+                                    <li>
+                                        <input type="text" id="lastName" placeholder="姓">
+                                    </li>
+                                    <div class="dropdown">
+                                        <button class="btn dropdown-toggle" id="options" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            予約コードを入力
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="options">
+                                            <li><a class="dropdown-item" data-value="reservation" href="#">予約コード</a></li>
+                                            <li><a class="dropdown-item" data-value="ticket" href="#">電子チケット番号</a></li>
+                                            <li><a class="dropdown-item" data-value="flyer" href="#">マイレージ番号</a></li>
+                                        </ul>
+                                    </div>
+                                    <li>
+                                        <input type="text" id="bookingInput" placeholder="予約コード">
+                                    </li>
+                                </ul>
+                                <button type="submit" class="btn btn-primary">チェックイン</button>
+                            </div>
+                        </div>
+
+                        <!-- フライト状況 -->
+                        <div class="tab-pane fade" id="pills-status" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="status_container" id="status">
+                                <ul class="criteria">
+                                    <li>
+                                        <input type="text" placeholder="フライト番号">
+                                    </li>
+                                </ul>
+                                <button type="submit" class="submit">
+                                    <i class='bx bx-right-arrow-alt' style='color:#ffffff'></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 最近の検索 -->
+            <div class="cookies-recent-searches" id="cookies-search">
+                <div class="cookies-searches-title">
+                    最近の検索
+                </div>
+                <div class="cookies-search-list">
+                    <div class="cookie-recent-search-container">
+                        <div class="close">
+                            <button onclick="eraseCart()" class="me-2" data-toggle="tooltip" title="検索を削除">
+                                <i class='bx bxs-trash text-muted'></i>
+                            </button>
+                            <button onclick="bookCart()">
+                                <i class='bx bxs-chevron-right-circle' data-toggle="tooltip" title="検索を予約"></i>
+                            </button>
+                        </div>
+                        <div class="cookie-search">
+                            <div class="cities">
+                                <p class="origin">HAN</p>
+                                <i class='bx bxs-plane-alt'></i>
+                                <p class="destination">BKK</p>
+                            </div>
+                            <div class="destinations_container">
+                                2025年3月25日
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cookie-recent-search-container">
+                        <div class="close">
+                            <button onclick="eraseCart()" class="me-2" data-toggle="tooltip" title="検索を削除">
+                                <i class='bx bxs-trash text-muted'></i>
+                            </button>
+                            <button onclick="bookCart()">
+                                <i class='bx bxs-chevron-right-circle' data-toggle="tooltip" title="検索を予約"></i>
+                            </button>
+                        </div>
+                        <div class="cookie-search">
+                            <div class="cities">
+                                <p class="origin">HAN</p>
+                                <i class='bx bxs-plane-alt'></i>
+                                <p class="destination">LHR</p>
+                            </div>
+                            <div class="destinations_container">
+                                2025年6月4日
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MULTIPURPOSE COMPONENT MOBILE -->
+        <div class="container-fluid" id="multipurpose_component_mobile">
+            <!-- FORM -->
+            <div class="tab-content form_mobile" id="pills-tabContent">
+                <!-- SEARCH MOBILE FORM -->
+                <div aria-labelledby="pills-search-tab" class="tab-pane fade show active" id="pills-search-mobile" role="tabpanel">
+                    <div class="form">
+                        <!-- DEPARTURE BUTTON -->
+                        <div>
+                            <label for="mobile_departure_btn">FROM</label>
+                            <button id="mobile_departure_btn" onclick="">
+                                <i class='bx bx-map' ></i>
+                                Departure
+                            </button>
+                        </div>
+                        <!-- DESTINATION BUTTON -->
+                        <div>
+                            <label for="mobile_destination_btn">TO</label>
+                            <button id="mobile_destination_btn">
+                                <i class='bx bx-world' ></i>
+                                Destination
+                            </button>
+                        </div>
+                        <!-- DATES BUTTON -->
+                        <div>
+                            <label for="mobile_dates_btn">WHEN</label>
+                            <button id="mobile_dates_btn">
+                                <i class='bx bx-calendar' ></i>
+                                Add dates
+                            </button>
+                        </div>
+                        <!-- PAX BUTTON -->
+                        <div>
+                            <label for="mobile_pax_btn">WHO</label>
+                            <button id="mobile_pax_btn">
+                                <i class='bx bxs-user-circle' ></i>
+                                Add passengers
+                            </button>
+                        </div>
+                    </div>
+                <!-- SEARCH BTN -->
+                <button class="btn btn-primary search">
+                    SEARCH
+                </button>
+                </div>
+                <!-- MMB MOBILE FORM -->
+                <div aria-labelledby="pills-mmb-tab" class="tab-pane fade" id="pills-mmb-mobile" role="tabpanel">
+                    <form action="submit" class="mmb_form">
+                        <label for="last_name">LAST NAME</label>
+                        <input type="text" id="last_name" placeholder="Your Last name">
+                        <label for="booking_reference">BOOKING REFERENCE</label>
+                        <input type="text" maxlength="6" id="booking_reference" placeholder="Your booking reference">
+                    </form>
+                    <button type="submit" class="btn btn-primary btn_mmb">
+                        RETRIEVE BOOKING
+                    </button>
+                </div>
+                <!-- CHECK-IN MOBILE FORM -->
+                <div aria-labelledby="pills-ssci-tab" class="tab-pane fade" id="pills-ssci-mobile" role="tabpanel">
+                    <form action="submit">
+                        <label for="booking-reference-mobile">IDENTIFICATION</label>
+                        <input type="text" placeholder="Booking reference" id="booking-reference-mobile">
+                        <label for="lastname-mobile">LAST NAME</label>
+                        <input type="text" placeholder="Last name" id="lastname-mobile">
+                        <button class="btn btn-primary" id="mobile-btn-ssci">CHECK-IN</button>
+                    </form>
+                </div>
+                <!-- STATUS MOBILE FORM -->
+                <div aria-labelledby="pills-status-tab" class="tab-pane fade" id="pills-status-mobile" role="tabpanel">
+                    <form action="submit">
+                        <label for="flight_number_mobile">FLIGHT NUMBER</label>
+                        <input type="text" placeholder="Flight number" id="flight_number_mobile">
+                        <button class="btn btn-primary" id="mobile-btn-status">SEARCH</button>
+                    </form>
+                </div>
+            </div>
+            <!-- TABS -->
+             <ul class="nav nav-pills mobile-pills-tabs mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="pills-search" aria-selected="true" class="nav-link" data-bs-target="#pills-search-mobile" data-bs-toggle="pill" id="pills-search-mobile-tab" role="tab" type="button">
+                        <i class='bx bx-world' ></i>
+                        <p>Search</p>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="pills-mmb" aria-selected="true" class="nav-link" data-bs-target="#pills-mmb-mobile" data-bs-toggle="pill" id="pills-mmb-mobile-tab" role="tab" type="button">
+                        <i class='bx bxs-book-content' ></i>
+                        <p>Manage</p>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="pills-ssci" aria-selected="false" class="nav-link" data-bs-target="#pills-ssci-mobile" data-bs-toggle="pill" id="pills-ssci-mobile-tab" role="tab" type="button">
+                        <i class='bx bxs-calendar-check' ></i>
+                        <p>Check-in</p>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="pills-status" aria-selected="false" class="nav-link" data-bs-target="#pills-status-mobile" data-bs-toggle="pill" id="pills-status-mobile-tab" role="tab" type="button">
+                        <i class='bx bxs-plane-take-off' ></i>
+                        <p>Status</p>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- END OF HEADER CONTAINER -->
+
+        <!-- BOOK AGAIN -->
+        <div class="container-fluid" id="bookAgain">
+            <div class="section_title">
+                <h2>Jane, resume your bookings.</h2>
+                <h5>It takes three clicks.</h5>
+            </div>
+            <div class="bookagaintabs">
+                <ul class="nav nav-pills mb-3 justify-content-center" id="tabMenuTripWishList" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="flight1" data-bs-toggle="pill" data-bs-target="#flight1content" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ha Noi - Bangkok</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="flight2" data-bs-toggle="pill" data-bs-target="#flight2content" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Ha Noi - London</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="flight3" data-bs-toggle="pill" data-bs-target="#flight3content" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Ha Noi - Singapore</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content d-flex justify-content-center" id="contentSavedTrip">
+                    
+                    <!-- FLIGHT 1 -->
+                    <div class="tab-pane fade show active" id="flight1content" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="flight-container d-flex flex-wrap">
+                            <div class="img" id="flight1img">
+                            </div>
+                            <div class="flight-content">
+                                <div class="route">
+                                    <div class="d-flex flex-column">
+                                        <h5>Ha Noi</h5>
+                                        <span class="text-muted small">HAN</span> 
+                                    </div>
+                                    <i class='bx bx-transfer-alt'></i>
+                                    <div class="d-flex flex-column">
+                                        <h5>Bangkok</h5>
+                                        <span class="text-muted small">BKK</span> 
+                                    </div>
+                                </div>
+                                <div class="pax">
+                                    <h6>1 pax</h6>
+                                </div>
+                                <div class="trip">
+                                    <p>March 25th, 2025</p>
+                                </div>
+                                <button class="btn btn-primary">Book now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="flight2content" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <!-- FLIGHT 2 -->
+                        <div class="tab-pane fade show active" id="flight1content" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                            <div class="flight-container d-flex flex-wrap">
+                                <div class="img" id="flight2img"></div>
+                                <div class="flight-content">
+                                    <div class="route">
+                                        <div class="d-flex flex-column">
+                                            <h5>Ha Noi</h5>
+                                            <span class="text-muted small">HAN</span> 
+                                        </div>
+                                        <i class='bx bx-transfer-alt'></i>
+                                        <div class="d-flex flex-column">
+                                            <h5>London</h5>
+                                            <span class="text-muted small">LHR</span> 
+                                        </div>
+                                    </div>
+                                    <div class="pax">
+                                        <h6>1 pax</h6>
+                                    </div>
+                                    <div class="trip">
+                                        <p>June 4th, 2025</p>
+                                    </div>
+                                    <button class="btn btn-primary">Book now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="flight3content" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <!-- FLIGHT 2 -->
+                        <div class="tab-pane fade show active" id="flight1content" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                            <div class="flight-container d-flex flex-wrap">
+                                <div class="img" id="flight3img"></div>
+                                <div class="flight-content">
+                                    <div class="route">
+                                        <div class="d-flex flex-column">
+                                            <h5>Ha Noi</h5>
+                                            <span class="text-muted small">HAN</span> 
+                                        </div>
+                                        <i class='bx bx-transfer-alt'></i>
+                                        <div class="d-flex flex-column">
+                                            <h5>Singapore</h5>
+                                            <span class="text-muted small">SIN</span> 
+                                        </div>
+                                    </div>
+                                    <div class="pax">
+                                        <h6>1 pax</h6>
+                                    </div>
+                                    <div class="trip">
+                                        <p>Nov 10th, 2025</p>
+                                    </div>
+                                    <button class="btn btn-primary" id="launchSearch2">Book now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+         <!-- SUPPORT OPTIONS -->
+        <!-- サポートオプション -->
+        <section id="support-options">
+            <div class="section_title">
+                <h2>どのようにお手伝いできますか？</h2>
+                <h6>最適なオプションを選択してください</h6>
+            </div>
+            <div class="support-options-items mx-auto">
+                <ul>
+                    <!-- カード 1 -->
+                    <li>
+                        <div class="card">
+                            <img alt="help1" class="card-img-top" src="" id="help_1">
+                            <div class="card-body">
+                                <h5 class="card-title">コールセンター</h5>
+                                <p class="card-text">お問い合わせやサポートが必要な場合は、コールセンターをご利用ください。</p>
+                                <a class="btn btn-primary" href="#">詳細を見る</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- カード 2 -->
+                    <li>
+                        <div class="card">
+                            <img alt="help2" class="card-img-top" src="" id="help_2">
+                            <div class="card-body">
+                                <h5 class="card-title">公式ウェブサイト</h5>
+                                <p class="card-text">当社のウェブサイトでフライトの予約や管理、最新情報をご確認ください。</p>
+                                <a class="btn btn-primary" href="#">詳細を見る</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- カード 3 -->
+                    <li>
+                        <div class="card">
+                            <img alt="help3" class="card-img-top" src="" id="help_3">
+                            <div class="card-body">
+                                <h5 class="card-title">チャットボット</h5>
+                                <p class="card-text">よくある質問への回答をすぐに得ることができるAIチャットボットをご利用ください。</p>
+                                <a class="btn btn-primary" href="#">詳細を見る</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- RECENT SEARCHES -->
+        <!-- 最近の検索 -->
+        <div class="container-fluid" id="recent_searches">
+            <div class="section_title">
+                <h2>最近の検索履歴</h2>
+            </div>
+            <div class="cards d-flex justify-content-center">
+                <!-- カード1 -->
+                <div class="card" id="card1">
+                    <div class="card-body">
+                        <div class="text">
+                            <h5 class="card-title recent_destination">東京</h5>
+                            <h6 class="card-subtitle mb-2 recent_dates">2024年6月22日</h6>
+                            <h6 class="card-subtitle mb-2 recent_pax">2名</h6>
+                        </div>
+                    </div>
+                    <button class="btn-secondary continue_booking">予約を続ける <i class='bx bx-chevron-right'></i></button>
+                </div>
+                <!-- カード2 -->
+                <div class="card" id="card2">
+                    <div class="card-body">
+                        <div class="text">
+                            <h5 class="card-title recent_destination">バンコク</h5>
+                            <h6 class="card-subtitle mb-2 recent_dates">2024年7月12日</h6>
+                            <h6 class="card-subtitle mb-2 recent_pax">2名</h6>
+                        </div>
+                    </div>
+                    <button class="btn-secondary continue_booking">予約を続ける <i class='bx bx-chevron-right'></i></button>
+                </div>
+                <!-- カード3 -->
+                <div class="card" id="card3">
+                    <div class="card-body">
+                        <div class="text">
+                            <h5 class="card-title recent_destination">ローマ</h5>
+                            <h6 class="card-subtitle mb-2 recent_dates">2024年10月17日</h6>
+                            <h6 class="card-subtitle mb-2 recent_pax">2名</h6>
+                        </div>
+                    </div>
+                    <button class="btn-secondary continue_booking">予約を続ける <i class='bx bx-chevron-right'></i></button>
+                </div>
+                <!-- カード4 -->
+                <div class="card" id="card4">
+                    <div class="card-body">
+                        <div class="text">
+                            <h5 class="card-title recent_destination">ロンドン</h5>
+                            <h6 class="card-subtitle mb-2 recent_dates">2024年12月21日</h6>
+                            <h6 class="card-subtitle mb-2 recent_pax">2名</h6>
+                        </div>
+                    </div>
+                    <button class="btn-secondary continue_booking">予約を続ける <i class='bx bx-chevron-right'></i></button>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg load_more">すべての検索を見る</button>
+        </div>
+        
+        <!-- ANCILLARY SERVICES -->
+        <!-- 付帯サービスショートカット -->
+        <section class="container-fluid justify-content-center" id="ancillaries_shortcut">
+            <div class="section_content">
+                <div class="row align-items-center justify-content-between container">
+                    <div class="col-md p-5">
+                        <h2 class="fw-bolder" id="aaas-title">快適な旅をお楽しみください</h2>
+                        <p class="lead" id="aaas-subtitle">追加の荷物、専用ドライバーの予約、または機内WiFi接続をご利用ください。</p>
+                    </div>
+                    <div class="col-md ancillaries_list">
+                        <!-- 付帯サービス 1 -->
+                        <div class="card" id="AAAS1">
+                            <div class="card-body">
+                                <div class="text">
+                                    <h6 class="card-subtitle mb-2" class="recent_dates">接続サービス</h6>
+                                    <h5 class="card-title recent_destination">WiFiバウチャー</h5>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">接続を開始<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                        <!-- 付帯サービス 2 -->
+                        <div class="card" id="AAAS2">
+                            <div class="card-body">
+                                <div class="text">                                
+                                    <h6 class="card-subtitle mb-2" class="recent_pax">快適</h6>
+                                    <h5 class="card-title recent_destination">追加手荷物</h5>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">荷物を追加<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                        <!-- 付帯サービス 3 -->
+                        <div class="card" id="AAAS3">
+                            <div class="card-body">
+                                <div class="text">
+                                    <h6 class="card-subtitle mb-2" class="recent_pax">快適</h6>
+                                    <h6 class="card-title recent_dates">座席</h6>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">座席を選択<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                        <!-- 付帯サービス 4 -->
+                        <div class="card" id="AAAS4">
+                            <div class="card-body">
+                                <div class="text">
+                                    <h6 class="card-subtitle mb-2" class="recent_dates">リラックス</h6>
+                                    <h5 class="card-title recent_destination">ラウンジ利用</h5>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">アクセスを予約<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONALIZED ANCILLARY SERVICES -->
+        <!-- パーソナライズされた付帯サービス -->
+        <section class="container-fluid justify-content-center" id="aaas-personalized">
+            <div class="section_content">
+                <div class="row align-items-center justify-content-between container">
+                    <div class="col-md ancillaries_list">
+                        <!-- 付帯サービス 1 -->
+                        <div class="card" id="AAAS1P">
+                            <div class="card-body">
+                                <div class="text">
+                                    <h6 class="card-subtitle mb-2 recent_dates">快適</h6>
+                                    <h5 class="card-title recent_destination" id="preferred-aaas"></h5>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">今すぐ予約<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                        <!-- 付帯サービス 2 -->
+                        <div class="card" id="AAAS2P">
+                            <div class="card-body">
+                                <div class="text">                                
+                                    <h6 class="card-subtitle mb-2 recent_pax">快適</h6>
+                                    <h5 class="card-title recent_destination">追加手荷物</h5>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">荷物を追加<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                        <!-- 付帯サービス 3 -->
+                        <div class="card" id="AAAS3P">
+                            <div class="card-body">
+                                <div class="text">
+                                    <h6 class="card-subtitle mb-2 recent_pax">快適</h6>
+                                    <h6 class="card-title recent_dates">座席</h6>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">座席を選択<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                        <!-- 付帯サービス 4 -->
+                        <div class="card" id="AAAS4P">
+                            <div class="card-body">
+                                <div class="text">
+                                    <h6 class="card-subtitle mb-2 recent_dates">リラックス</h6>
+                                    <h5 class="card-title recent_destination">ラウンジ利用</h5>
+                                </div>
+                            </div>
+                            <button class="btn-secondary continue_booking">アクセスを予約<i class='bx bx-chevron-right'></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md p-5">
+                        <h2 class="fw-bolder" id="aaas-title">ジェーンさん、ご家族と一緒に快適な旅はいかがですか？</h2>
+                        <p class="lead" id="aaas-subtitle">家族向けの旅行サービスをチェックして、旅行のすべてを私たちにお任せください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>       
+
+        <!-- DESTINTIONS SECTION -->
+        <!-- 行き先リスト -->
+        <section class="container-fluid d-flex justify-content-center" id="destinations_list">
+            <div class="section_content">
+                <div class="d-flex-lg-column mx-auto">
+                    <h2 class="section_title">次の旅行先はどこですか？</h2>
+                    <h4 class="section_subtitle">おすすめのルートを参考にして、次の旅の計画を始めましょう。</h4>
+                </div>
+                <div class="row">
+                    <div class="row destinations_container">
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card big-card">
+                                <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80" class="card-img" alt="ロンドン">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">ロンドン</h5>
+                                    <p class="small">歴史とモダンが融合する街、ロンドンへ。</p>
+                                    <a href="#" class="btn btn-primary">
+                                        <p>詳しく見る</p>
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card big-card">
+                                <img src="https://images.unsplash.com/photo-1508964942454-1a56651d54ac?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img" alt="シンガポール">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">シンガポール</h5>
+                                    <p class="small">未来都市シンガポールの魅力を発見。</p>
+                                    <a href="#" class="btn btn-primary">
+                                        <p>詳しく見る</p>
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card big-card">
+                                <img src="https://images.unsplash.com/photo-1546412414-e1885259563a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" class="card-img" alt="ドバイ">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">ドバイ</h5>
+                                    <p class="small">豪華な高層ビルと砂漠のオアシス、ドバイ。</p>
+                                    <a href="#" class="btn btn-primary">
+                                        <p>詳しく見る</p>
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card big-card">
+                                <img src="https://images.unsplash.com/photo-1515081774057-84dcf72d0cf1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1915&q=80" class="card-img" alt="ニューヨーク">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">ニューヨーク</h5>
+                                    <p class="small">眠らない街、ニューヨークを満喫。</p>
+                                    <a href="#" class="btn btn-primary">
+                                        <p>詳しく見る</p>
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card big-card">
+                                <img src="https://images.unsplash.com/photo-1537799943037-f5da89a65689?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1886&q=80" class="card-img" alt="ローマ">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">ローマ</h5>
+                                    <p class="small">古代と現代が交差する永遠の都、ローマ。</p>
+                                    <a href="#" class="btn btn-primary">
+                                        <p>詳しく見る</p>
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card big-card">
+                                <img src="https://images.unsplash.com/photo-1589137846286-b70355bb0d07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1827&q=80" class="card-img" alt="リオ・デ・ジャネイロ">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">リオ・デ・ジャネイロ</h5>
+                                    <p class="small">サンバのリズムと美しいビーチ、リオ。</p>
+                                    <a href="#" class="btn btn-primary">
+                                        <p>詳しく見る</p>
+                                        <i class='bx bx-chevron-right'></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center my-4">
+                    <button class="btn btn-primary btn-lg load_more">もっと見る</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOYALTY TEASER -->
+        <div class="container-fluid" id="loyalty_banner">
+            <div class="section_content">
+                <div class="p-5 mb-4 rounded-3 banner-container">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">最高の特典を手に入れよう！</h1>
+                        <p class="col-md-8 fs-4">
+                            限定オファー、特別なリワード、<br> 
+                            そして驚くべき特典をJALマイレージバンクで。
+                        </p>
+                        <button class="btn btn-primary btn-lg" type="button" id="createLoyalty" data-bs-toggle="modal"
+                            data-bs-target="#createLoyaltyModal">JALマイレージバンクに入会する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CROSS SELL CARDS -->
+        <section class="container-fluid" id="cross_sell">
+            <!-- セクションタイトル -->
+            <div class="d-flex-lg-column mx-auto">
+                <h2 class="section_title">お手伝いできることはありますか？</h2>
+                <h4 class="section_subtitle">タクシー、ホテル予約、レンタカーなど、当社の提携パートナーと共に充実したサービスをご提供します。</h4>
+            </div>
+            <!-- カードリスト -->
+            <div class="cross-sell-list">
+                <!-- タクシー手配 -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="cross-sell-icon">
+                            <i class='bx bxs-taxi'></i>
+                        </div>
+                        <h5 class="card-title">タクシー手配</h5>
+                        <p class="card-text">提携パートナーの快適なタクシーサービスをご利用ください。</p>
+                        <a href="#" class="btn btn-secondary">タクシーを予約</a>
+                    </div>
+                </div>
+                <!-- ホテル予約 -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="cross-sell-icon">
+                            <i class='bx bxs-hotel'></i>
+                        </div>
+                        <h5 class="card-title">ホテル予約</h5>
+                        <p class="card-text">数千の宿泊施設からお選びいただけます。</p>
+                        <a href="#" class="btn btn-secondary">ホテルを予約</a>
+                    </div>
+                </div>
+                <!-- レンタカー -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="cross-sell-icon">
+                            <i class='bx bxs-car'></i>
+                        </div>
+                        <h5 class="card-title">レンタカー</h5>
+                        <p class="card-text">快適でストレスのないドライブをお楽しみください。</p>
+                        <a href="#" class="btn btn-secondary">レンタカーを予約</a>
+                    </div>
+                </div>
+                <!-- アクティビティ予約 -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="cross-sell-icon">
+                            <i class='bx bxs-castle'></i>
+                        </div>
+                        <h5 class="card-title">アクティビティ</h5>
+                        <p class="card-text">今日はどんなアクティビティを楽しみますか？</p>
+                        <a href="#" class="btn btn-secondary">アクティビティを予約</a>
+                    </div>
+                </div>
+                <!-- 駐車場予約 -->
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div class="cross-sell-icon">
+                            <i class='bx bxs-parking'></i>
+                        </div>
+                        <h5 class="card-title">駐車場予約</h5>
+                        <p class="card-text">駐車場が必要ですか？私たちがお手伝いします。</p>
+                        <a href="#" class="btn btn-secondary">駐車場を予約</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- HOLIDAYS TEASER -->
+        <div class="container-fluid" id="holidays_banner">
+            <div class="section_content">
+                <div class="p-5 mb-4 rounded-3 holidays-banner-container">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-5 fw-bold">日本を訪れよう</h1>
+                        <p class="col-md-8 fs-4">魅力的な目的地やお得なオファーを発見し、驚きを体験しましょう！</p>
+                        <button class="btn btn-primary btn-lg" type="button">もっと見る</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRAVEL INFORMATION SLIDER -->
+        <section id="carousel_section">
+            <!-- セクションタイトル -->
+            <div class="d-flex-lg-column mx-auto">
+                <h2 class="section_title">役立つ旅行情報</h2>
+                <h4 class="section_subtitle">ご旅行の準備はできていますか？出発前にチェックしておきましょう。</h4>
+            </div>
+            <!-- スライダー -->
+            <div class="carousel slide" id="carouselExampleControls">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!-- カードラッパー -->
+                        <div class="card-wrapper">
+                            <!-- カード1 -->
+                            <div class="card" style="width: 18rem;" id="info1">
+                                <img src="" class="card-img-top" alt="information_content">
+                                <div class="card-body">
+                                    <h5 class="card-title">COVID-19</h5>
+                                    <p class="card-text">新型コロナウイルスに関する最新情報をご確認ください。</p>
+                                    <a href="#" class="btn btn-primary">詳細はこちら</a>
+                                </div>
+                            </div>
+                            <!-- カード2 -->
+                            <div class="card" style="width: 18rem;" id="info2">
+                                <img src="" class="card-img-top" alt="information_content">
+                                <div class="card-body">
+                                    <h5 class="card-title">空港での過ごし方</h5>
+                                    <p class="card-text">空港でのスムーズな移動方法やサービスについての情報です。</p>
+                                    <a href="#" class="btn btn-primary">詳細はこちら</a>
+                                </div>
+                            </div>
+                            <!-- カード3 -->
+                            <div class="card" style="width: 18rem;" id="info3">
+                                <img src="..." class="card-img-top" alt="information_content">
+                                <div class="card-body">
+                                    <h5 class="card-title">ビザ情報</h5>
+                                    <p class="card-text">目的地への渡航に必要なビザ情報を確認しましょう。</p>
+                                    <a href="#" class="btn btn-primary">詳細はこちら</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <!-- カードラッパー -->
+                        <div class="card-wrapper">
+                            <!-- カード4 -->
+                            <div class="card" style="width: 18rem;" id="info4">
+                                <img src="" class="card-img-top" alt="information_content">
+                                <div class="card-body">
+                                    <h5 class="card-title">お子様連れの旅行</h5>
+                                    <p class="card-text">お子様と一緒に快適に旅行するためのポイントを紹介します。</p>
+                                    <a href="#" class="btn btn-tertiary">詳細はこちら</a>
+                                </div>
+                            </div>
+                            <!-- カード5 -->
+                            <div class="card" style="width: 18rem;" id="info5">
+                                <img src="" class="card-img-top" alt="information_content">
+                                <div class="card-body">
+                                    <h5 class="card-title">バリアフリー旅行</h5>
+                                    <p class="card-text">障がいのある方のためのサポート情報をご紹介します。</p>
+                                    <a href="#" class="btn btn-tertiary">詳細はこちら</a>
+                                </div>
+                            </div>
+                            <!-- カード6 -->
+                            <div class="card" style="width: 18rem;" id="info6">
+                                <img src="..." class="card-img-top" alt="information_content">
+                                <div class="card-body">
+                                    <h5 class="card-title">ペットと一緒の旅行</h5>
+                                    <p class="card-text">ペットと一緒に快適に飛行機を利用するためのヒント。</p>
+                                    <a href="#" class="btn btn-tertiary">詳細はこちら</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleControls" type="button">
+                    <i class='bx bx-chevron-left'></i>
+                </button>
+                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleControls" type="button">
+                    <i class='bx bx-chevron-right'></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- NEWS -->
+        <div class="container news">
+            <div class="my-5 d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                    <h5>最新の運航情報</h5>
+                    <h6 class="text-muted">最終更新: 2023年11月22日</h6>
+                </div>
+                <button>すべてのニュースを見る</button>
+            </div>
+            <div class="list-group" id="news-ticker">
+                <a href="#" class="list-group-item list-group-item-action fade-item" id="news1">
+                    <h5 class="mb-1">ロンドン・ヒースロー空港のターミナル変更</h5>
+                    <p class="mb-1 text-muted">ターミナルの変更に関する重要なお知らせです。</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action fade-item" id="news2">
+                    <h5 class="mb-1">タイの健康要件</h5>
+                    <p class="mb-1">タイ政府の公式通知を確認してください。</p>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action fade-item" id="news3">
+                    <h5 class="mb-1">アメリカ入国審査の待ち時間が延長</h5>
+                    <p class="mb-1">適切な書類を用意するため、公式通知をお読みください。</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- CORPORATE SECTION -->
+        <section class="container-fluid d-flex justify-content-center" id="corporate_section">
+            <div class="d-flex justify-content-between align-items-center col-912 mx-auto corporate_content">
+                <div class="col-9 p-5 text-light">
+                    <h2 class="fw-bolder title_shadow">50年間、世界中を飛び続けています</h2>
+                    <p class="lead text-light">私たちの歴史、ブランド、価値観、人々、そして取り組みについて詳しく知ってください。</p>
+                </div>
+                <div>
+                    <button class="btn btn-secondary">もっと詳しく</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOP - APPS -->
+        <section class="container-fluid d-flex" id="mop-apps">
+            <div class="d-flex flex-column justify-content-center w-100">
+                <div class="section_content">
+                    <h4>お好きな方法でお支払い、アプリをダウンロード</h4>
+                </div>
+                <div class="d-flex justify-content-between images-container flex-wrap">
+                    <div class="payment d-flex align-items-center my-4 flex-wrap">
+                        <img src="assets/img/cards/visa.png" alt="" class="mx-2">
+                        <img src="assets/img/cards/mc.png" alt="" class="mx-2">
+                        <img src="assets/img/cards/wc.png" alt="" class="mx-2">
+                        <img src="assets/img/cards/kakao.png" width="36px" alt="" class="mx-2">
+                    </div>
+                    <div class="apps flex-wrap">
+                        <img src="./assets/img/cards/google-play-badge.png" width="120" alt="">
+                        <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-example-preferred_2x.png" width="100" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section class="container-fluid d-flex" id="newsletter">
+            <div class="p-5 mb-4 rounded-3 nl-container">
+                <form class="d-flex align-items-center nl-form">
+                    <div class="mx-4">
+                        <h5>ニュースレターを購読する</h5>
+                        <p>毎月、最新のお知らせやお得な情報をお届けします。</p>
+                    </div>
+                    <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                        <label for="newsletter1" class="visually-hidden">メールアドレス</label>
+                        <input id="newsletter1" type="text" class="form-control" placeholder="メールアドレス">
+                        <button class="btn btn-primary" type="button">購読する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <section class="footer" id="footer">
+            <div class="container">
+                <footer class="py-5">
+                    <div class="row">
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>当社のネットワーク</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ホーム</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">機能</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">料金</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">よくある質問</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">会社概要</a></li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>予約管理</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ホーム</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">機能</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">料金</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">よくある質問</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">会社概要</a></li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>旅行の計画</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ホーム</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">機能</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">料金</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">よくある質問</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">会社概要</a></li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>ロイヤルティ</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ホーム</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">機能</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">料金</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">よくある質問</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">会社概要</a></li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>予約</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ホーム</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">機能</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">料金</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">よくある質問</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">会社概要</a></li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>会社情報</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">ホーム</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">機能</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">料金</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">よくある質問</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">会社概要</a></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                        <div>
+                            <img src="assets/img/logo/logo_white.png" alt="">
+                            <p>© 2024 Japan Airlines. All rights reserved.</p>
+                        </div>
+                        <ul class="list-unstyled d-flex">
+                            <li class="ms-3"><a class="link-dark" href="#"><i class='bx bxl-twitter' ></i></a></li>
+                            <li class="ms-3"><a class="link-dark" href="#"><i class='bx bxs-envelope' ></i></a></li>
+                            <li class="ms-3"><a class="link-dark" href="#"><i class='bx bxl-messenger' ></i></a></li>
+                            <li class="ms-3"><a class="link-dark" href="#"><i class='bx bx-headphone' ></i></a></li>
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+<!-- ======== LIBRARIES IMPORT -->
+    <!-- POPPER TOOLTIPS -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+<!-- ======== SCRIPTS -->
+
+
+        <script>
+
+            mockLoginData ={
+                "name": "nono",
+                "userId": "nono",
+                "listCart": [
+                    {
+                        "tripName": "My trip to LHR",
+                        "id": "11AP7HZX8SR78D4R",
+                        "departure_code": "JFK",
+                        "arrival_code": "LHR",
+                        "pax_number": 1,
+                        "price": 1081.2,
+                        "type": "Return",
+                        "outbound_date": "25Dec",
+                        "dico_location": {
+                            "NYC": {
+                                "type": "city",
+                                "cityCode": "NYC",
+                                "cityName": "NEW YORK",
+                                "stateCode": "NY",
+                                "countryCode": "US"
+                            },
+                            "LON": {
+                                "type": "city",
+                                "cityCode": "LON",
+                                "cityName": "LONDON",
+                                "countryCode": "GB"
+                            },
+                            "LGW": {
+                                "type": "airport",
+                                "airportName": "GATWICK",
+                                "cityCode": "LON",
+                                "countryCode": "GB"
+                            },
+                            "JFK": {
+                                "type": "airport",
+                                "airportName": "JOHN F KENNEDY INTL",
+                                "cityCode": "NYC",
+                                "stateCode": "NY",
+                                "countryCode": "US"
+                            },
+                            "LHR": {
+                                "type": "airport",
+                                "airportName": "HEATHROW",
+                                "cityCode": "LON",
+                                "countryCode": "GB"
+                            }
+                        },
+                        "dico_country": {
+                            "US": "UNITED STATES OF AMERICA",
+                            "GB": "UNITED KINGDOM"
+                        },
+                        "inbound_date": "29Dec"
+                    },
+                    {
+                        "tripName": "London trip!",
+                        "id": "11AP7HZX8SR78D4R",
+                        "departure_code": "JFK",
+                        "arrival_code": "LHR",
+                        "pax_number": 1,
+                        "price": 1081.2,
+                        "type": "Return",
+                        "outbound_date": "25Dec",
+                        "dico_location": {
+                            "NYC": {
+                                "type": "city",
+                                "cityCode": "NYC",
+                                "cityName": "NEW YORK",
+                                "stateCode": "NY",
+                                "countryCode": "US"
+                            },
+                            "LON": {
+                                "type": "city",
+                                "cityCode": "LON",
+                                "cityName": "LONDON",
+                                "countryCode": "GB"
+                            },
+                            "LGW": {
+                                "type": "airport",
+                                "airportName": "GATWICK",
+                                "cityCode": "LON",
+                                "countryCode": "GB"
+                            },
+                            "JFK": {
+                                "type": "airport",
+                                "airportName": "JOHN F KENNEDY INTL",
+                                "cityCode": "NYC",
+                                "stateCode": "NY",
+                                "countryCode": "US"
+                            },
+                            "LHR": {
+                                "type": "airport",
+                                "airportName": "HEATHROW",
+                                "cityCode": "LON",
+                                "countryCode": "GB"
+                            }
+                        },
+                        "dico_country": {
+                            "US": "UNITED STATES OF AMERICA",
+                            "GB": "UNITED KINGDOM"
+                        },
+                        "inbound_date": "29Dec"
+                    },
+                    {
+                        "tripName": "London ?",
+                        "id": "11AP7HZX8SR78D4R",
+                        "departure_code": "JFK",
+                        "arrival_code": "LHR",
+                        "pax_number": 1,
+                        "price": 1081.2,
+                        "type": "Return",
+                        "outbound_date": "25Dec",
+                        "dico_location": {
+                            "NYC": {
+                                "type": "city",
+                                "cityCode": "NYC",
+                                "cityName": "NEW YORK",
+                                "stateCode": "NY",
+                                "countryCode": "US"
+                            },
+                            "LON": {
+                                "type": "city",
+                                "cityCode": "LON",
+                                "cityName": "LONDON",
+                                "countryCode": "GB"
+                            },
+                            "LGW": {
+                                "type": "airport",
+                                "airportName": "GATWICK",
+                                "cityCode": "LON",
+                                "countryCode": "GB"
+                            },
+                            "JFK": {
+                                "type": "airport",
+                                "airportName": "JOHN F KENNEDY INTL",
+                                "cityCode": "NYC",
+                                "stateCode": "NY",
+                                "countryCode": "US"
+                            },
+                            "LHR": {
+                                "type": "airport",
+                                "airportName": "HEATHROW",
+                                "cityCode": "LON",
+                                "countryCode": "GB"
+                            }
+                        },
+                        "dico_country": {
+                            "US": "UNITED STATES OF AMERICA",
+                            "GB": "UNITED KINGDOM"
+                        },
+                        "inbound_date": "29Dec"
+                    }
+                ]
+            }
+
+                        function login(){
+                              fetch(urlServer+'/api/login', {
+                                method: 'POST',
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({name:document.getElementById("username").value,pwd:document.getElementById("password").value})
+                            })
+                            .then(function(response) {
+                                return response.json();
+                            })
+                            .then(function(data) {
+                                window.userName = data.name;
+                                window.userId = data.userId;
+                                displaySavedTrip(data);
+
+                            })
+                            .catch(function(error) {
+                                // Handle any errors that occurred during the fetch
+                                displaySavedTrip(mockLoginData);
+                            });
+                        }
+
+            function displaySavedTrip(data){
+                if( data.listCart &&  data.listCart.length){
+                    var index = 0;
+                    var listHtml = "";
+                    var listMenuHtml = "";
+                    for (const cart of data.listCart) {
+                        listMenuHtml += `<li class="nav-item" role="presentation">
+                            <button class="nav-link `+(index == 0 ? 'active' :'')+`" id="flight`+(index+1)+`" data-bs-toggle="pill" data-bs-target="#flight`+(index+1)+`content" type="button" role="tab" aria-controls="pills-home" aria-selected="true">`+(cart.tripName)+`</button>
+                        </li>`;
+
+
+                        listHtml += `<div class="tab-pane fade `+(index == 0 ? 'show active' :'')+`" id="flight`+(index+1)+`content" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="`+(index+1)+`">
+                            <!-- FLIGHT 2 -->
+                                <div class="flight-container d-flex flex-wrap">
+                                    <div class="img" id="flight2img"></div>
+                                    <div class="flight-content">
+                                        <div class="route">
+                                            <div class="d-flex flex-column">
+                                                <h5>`+getCityName(cart.departure_code,cart.dico_location)+`</h5>
+                                                <span class="text-muted small">`+cart.departure_code+`</span> 
+                                            </div>
+                                            <i class='bx bx-transfer-alt'></i>
+                                            <div class="d-flex flex-column">
+                                                <h5>`+getCityName(cart.arrival_code,cart.dico_location)+`</h5>
+                                                <span class="text-muted small">`+cart.arrival_code+`</span> 
+                                            </div>
+                                        </div>
+                                        <div class="pax">
+                                            <h6>`+cart.pax_number+` pax</h6>
+                                        </div>
+                                        <div class="trip">
+                                            <p>`+cart.type+`</p>
+                                        </div>
+                                        <button class="btn btn-primary" onclick="launchDeepLink('`+cart.id+`')">Book now</button>
+                                    </div>
+                                </div>
+                        </div>`;
+                        index++;
+                    };
+
+                    ///////////////////////////////////////
+                    ///////////////////////////////////////
+                    //////////////////////////
+                    //////////////////////////
+                    /////////////
+                    /////////////
+                    /////////////
+                    // PERSONALIZATION
+
+                    document.getElementById("contentSavedTrip").innerHTML = listHtml;
+                    document.getElementById("cookies-search").style = "display:block";
+                    // document.getElementById("bookAgain").style = "display:block";
+                    document.getElementById("login-btn").style = "display:none";
+                    document.getElementById("logout-btn").style = "display:flex";
+                    document.getElementById("tabMenuTripWishList").innerHTML = listMenuHtml;
+                    document.getElementById("aaas-personalized").style = "display:flex";
+                    document.getElementById("ancillaries_shortcut").style = "display:none";
+                    document.getElementById("loyalty_banner").style = "display:none";
+                }  
+            }
+
+            function getCityName(code,dico){
+                return dico[code].cityName != null ? dico[code].cityName : dico[dico[code].cityCode].cityName
+            }
+
+            function launchDeepLink(cartId){
+                openWindowWithPost(urlRefX+"/shopping-cart?cartId="+cartId+"&type=cart");
+            }
+
+        </script>
+   
+
+    <!-- SCROLLING NAV FUNCTION -->
+    <script>
+            window.onscroll = function() {bgFunction()};
+            function bgFunction(){
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("navigationbar").style.background = "#000";
+                    document.getElementById("navigationbar").classList.add("fixed-top");
+                    document.getElementById("navigationbar").style.padding = "20px 0px 15px 0px";
+                    document.getElementById("airline_logo").src="assets/img/logo/logo_white.png";
+                } else {
+                    document.getElementById("navigationbar").style.background = "none";
+                    document.getElementById("navigationbar").classList.remove("fixed-top");
+                    document.getElementById("airline_logo").src="assets/img/logo/logo_white.png";
+                }
+                            }
+    </script>
+    
+    <!-- CHAT JS -->
+    <script>
+        function displayChat() {
+            document.getElementById("chat-dialogue").style.display = "flex";
+        }
+    
+        function closeChat() {
+            document.getElementById("chat-dialogue").style.display = "none";
+        }
+    
+        const userInput = document.getElementById('user-input-message');
+        const chatDialogueBody = document.querySelector('.chat-dialogue-body');
+        const responseMessage = document.querySelector('.response-content .b-message');
+        const responseTiming = document.querySelector('.response-content .timing');
+    
+        function getTimestamp() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            return `${hours}:${minutes}`;
+        }
+    
+        function addMessage(message, isUser) {
+            const messageContainer = document.createElement('div');
+            messageContainer.classList.add(isUser ? 'user-input' : 'response');
+
+            const messageContent = document.createElement('div');
+            messageContent.classList.add(isUser ? 'user-input-content' : 'response-content');
+
+            const messageClass = isUser ? 'u-message' : 'b-message';
+            
+            const messageElement = document.createElement('div');
+            messageElement.classList.add(messageClass);
+            messageElement.textContent = message;
+
+            const timingElement = document.createElement('div');
+            timingElement.classList.add('timing');
+            timingElement.textContent = getTimestamp();
+
+            messageContent.appendChild(messageElement);
+            messageContent.appendChild(timingElement);
+
+            messageContainer.appendChild(messageContent);
+            chatDialogueBody.appendChild(messageContainer);
+
+            if (isUser) {
+                userInput.value = '';
+            }
+
+            chatDialogueBody.scrollTop = chatDialogueBody.scrollHeight;
+        }
+
+    
+        function displayWelcomeMessage() {
+            const welcomeMessage = "Welcome to Japan Airlines online support! Tell us what we can help you with by using keywords like baggage, booking, check-in, and so on.";
+            const timestamp = getTimestamp();
+            responseMessage.textContent = welcomeMessage;
+            responseTiming.textContent = timestamp;
+        }
+    
+        function getAIResponse(userInput) {
+        // Assuming chat-data.json is located in the "chat" folder
+        fetch('./chat/faqs.json')
+            .then(response => response.json())
+            .then(chatData => {
+                const userInputLower = userInput.toLowerCase();
+
+                for (const category in chatData) {
+                    for (const { Question, Answer } of chatData[category]) {
+                        const questionLower = Question.toLowerCase();
+
+                        const hasKeyword = userInputLower.split(' ').some(keyword => questionLower.includes(keyword));
+
+                        if (hasKeyword) {
+                            addMessage(Answer, false);
+                            return;
+                        }
+                    }
+                }
+
+                // If no match is found, display a generic response
+                addMessage("I'm sorry, I couldn't find information related to your query. Please try using different keywords or contact our support team for assistance.", false);
+            })
+            .catch(error => {
+                console.error('Error fetching chat data:', error);
+                // Handle error fetching data, e.g., show a default message
+                addMessage("I'm sorry, there was an error fetching information. Please try again later or contact our support team.", false);
+            });
+        }
+    
+        const openChatButton = document.getElementById('displayChat');
+        openChatButton.addEventListener('click', () => {
+            displayWelcomeMessage();
+        });
+    
+        function sendMessage() {
+            const message = userInput.value;
+            if (message.trim() !== '') {
+                addMessage(message, true);
+                getAIResponse(message);
+            }
+        }
+    
+        const sendButton = document.querySelector('.chat-dialogue-input button');
+        sendButton.addEventListener('click', sendMessage);
+    
+        userInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
+
+    <!-- SHOW AVATAR -->
+    <script>
+        function showLogin(){
+            document.getElementById('avatar').style.display = "flex";
+            let inputValue = document.getElementById("input").value;
+            if(inputValue === "ammar@gmail.com"){
+                let avatarContainer = document.getElementById('avatarcontainer');
+                document.getElementById("avatarpic").style.background = "url('https://previews.123rf.com/images/zurijeta/zurijeta1501/zurijeta150100547/35163177-arabic-man-on-blue.jpg')";
+                let ammar = document.createElement("div");
+                ammar.innerHTML = "Ammar";
+                localStorage.setItem("username", "Ammar");
+                localStorage.setItem("avatar", "url('https://previews.123rf.com/images/zurijeta/zurijeta1501/zurijeta150100547/35163177-arabic-man-on-blue.jpg')")
+
+                document.getElementById('mytrips').style.display = "flex";
+
+                let logoutBtn = document.createElement("button");
+                logoutBtn.setAttribute("id", "logout");
+                ammar.appendChild(logoutBtn);
+                logoutBtn.style.display = "none";
+
+                ammar.onmouseover = function() {
+                logoutBtn.style.display = "flex";
+                logoutBtn.innerHTML = "logout";
+                logoutBtn.classList.add("btn","btn-primary");
+                logoutBtn.onclick = logout;
+                };
+
+                ammar.onmouseout = function(){
+                    logoutBtn.style.display = "none";
+                }
+                avatarContainer.appendChild(ammar);
+                document.getElementById("bookAgain").style.display = "flex";
+            }
+            else{
+                let avatarContainer = document.getElementById('avatarcontainer');
+                document.getElementById("avatarpic").style.background = "url('https://kosmea.com.au/wp-content/uploads/2021/03/mature-asian-lady.jpeg')";
+                document.getElementById('inspiration').style.display = "flex";
+                let jane = document.createElement("div");
+                jane.innerHTML = "Jane";
+
+                localStorage.clear();
+                localStorage.setItem("username", "Jane");
+                localStorage.setItem("avatar", "url('https://kosmea.com.au/wp-content/uploads/2021/03/mature-asian-lady.jpeg')")
+
+                let logoutBtn = document.createElement("button");
+                logoutBtn.setAttribute("id", "logout");
+                jane.appendChild(logoutBtn);
+                logoutBtn.style.display = "none";
+
+                jane.onmouseover = function() {
+                logoutBtn.style.display = "flex";
+                logoutBtn.innerHTML = "logout";
+                logoutBtn.classList.add("btn","btn-primary");
+                logoutBtn.onclick = logout;
+                };
+
+                jane.onmouseout = function(){
+                    logoutBtn.style.display = "none";
+                }
+
+                avatarContainer.appendChild(jane);
+                document.getElementById("ancillaries_shortcut").style.background = "url('https://www.philippineairlines.com/-/media/images/new-pal-mm-web-images/homepage/home-page_hero-banner/flight-update/flight-update-1440-x-440.png?h=880&w=2880&hash=52E2CE9CBF119E6EF48C268B5DE2F331')";
+                var aaastitle = document.getElementById("aaas-title");
+                var aaasSubtitle = document.getElementById("aaas-subtitle");
+                aaastitle.innerHTML = "Jane, what about some comfort for you and the family?";
+                aaasSubtitle.innerHTML = "Check our family travel services, and let us take care of you and your dears all along the journey.";
+                aaastitle.style.color = "#FFFFFF";
+                aaasSubtitle.style.color = "#FFFFFF";
+            }
+            document.getElementById('login-btn').style.display = "none";
+        }
+    </script>
+    <!-- LOGOUT FEATURE -->
+    <script>
+        function logout(){
+            document.getElementById("login-btn").style ="display:flex";
+            document.getElementById("logout-btn").style ="display:none";
+        }
+    </script>
+    <!-- RUN REFX FLOW 2 -->
+    <script>
+        document.getElementById("launchSearch2").addEventListener("click", function (){
+             var htmlFilePath = "/refxLauncher_2.html";
+             window.open(htmlFilePath, "_blank");
+        })
+    </script>
+
+<!-- SHOW COOKIES SEARCH -->
+    <script>
+        function showCookiesSearch(){
+            document.getElementById("cookies-search").style.display = "flex";
+        }
+        function hideCookiesSearch(){
+            document.getElementById("cookies-search").style.display = "none";
+        }
+    </script>
+    
+<!-- Initialize Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      centeredSlides: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+        
+</script>
+
+<script src="./calendar.js"></script>
+    
+<script>
+    function logout(){
+        location.reload();
+    }
+</script>
+
+<!-- RUN REFX FLOW -->
+<script>
+   
+// Search configuration
+var from = "SIN";
+var to = "LHR";
+var dep = "2025-03-20";
+var returnDate = "2025-04-10";
+
+var bootstrapConfig;
+
+//BCM key
+var bcmKey; // ="putyourBCMkeyHereAndUncomment";
+
+// Add static configuration
+var staticConfig  = JSON.stringify([{ 'name': 'PageTitlePresConfig',
+'config': {
+  'backgroundImgMobilePath': '',
+  'backgroundImgTabletPath': '',
+  'backgroundImgDesktopPath': 'img/'+to+'.png',
+  'shouldApplyCustomStyling': true,
+  'shouldDisplayBackgroundImage': true
+},
+'library': '@refx/shared-components'
+},{
+'name': 'RefxComponentsCommonRuntimeConfig',
+'config': {
+  'globalDisplayDiscountOptions': true,
+  'globalDisplayAncillariesDiscounts': true,
+  'globalEnableHighlightOrdering': true,
+  'globalEnablePrimaryPassengerRememberMeOption': true,
+  'globalDisplayDiscounts': true,
+  "globalEnableGETQueryParamsDeeplinkForPage": [
+    { "pageId": "SHOPPINGCART", "type": "cart" },
+    { "pageId": "SEATMAP" },
+    { "pageId": "SERVICES" },
+    { "pageId": "CONFIRMATION" },
+    { "pageId": "MANAGEBOOKING" },
+    { "pageId": "self-reaccommodation/availability" } ,
+    { "pageId": "refund/review" },
+    { "pageId": "IDENTIFICATION" },
+    { "pageId": "JOURNEYSELECTION" },
+    { "pageId": "OVERVIEW" }
+  ]
+},
+'library': '@refx/shared-common'
+},{
+'name': 'AppConfig',
+'config': {
+  'enableNewFeature': true,
+},
+'library': '@vn/booking'
+}]);
+
+// Add bootstrap config (CO2 Panel activation example)
+// bootstrapConfig = JSON.stringify({
+//   'activateCo2Panel' : true
+// });
+
+var environment = '6x'; //0eskl or 6x
+var cffOverride;
+
+if (environment === '6x') {
+// Bootstrap config override
+bootstrapConfig = JSON.stringify({
+  'gatewayBaseUrl': 'https://test.airlines.api.amadeus.com',
+  'gatewayClientId': 'hHTGWHFDeUFVdOztQWTC7zoe63E0k8zu',
+  'gatewayClientSecret': 'Zw2qeL9q2LXd6Ez0'
+});
+// Override with 6X fare families
+cffOverride = ["DEMOALL", "NDCTALL"];
+//bcmKey = undefined;
+} else if (environment === '0eskl') {
+// Bootstrap config override
+bootstrapConfig = JSON.stringify({
+  'gatewayBaseUrl': 'https://test.airlines.api.amadeus.com',
+  'gatewayClientId': '3GAAzoyrc81iw3CdAladDGKTXAGeZihg',
+  'gatewayClientSecret': 'YRTSzscJKH6E0ONM'
+});
+//bcmKey = undefined;
+} else if (environment === '0e') {
+// Bootstrap config override
+bootstrapConfig = JSON.stringify({
+  'gatewayBaseUrl': 'https://test.airlines.api.amadeus.com',
+  'gatewayClientId': 'CQZddrc7RFTBmG6Hbl7pQTyiPtHUuOAq',
+  'gatewayClientSecret': 'NaeP7dKAgV2emuvi'
+});
+//bcmKey = undefined;
+} else if (environment === '0eUAT') {
+// Bootstrap config override
+bootstrapConfig = JSON.stringify({
+"gatewayBaseUrl":"https://test.airlines.api.amadeus.com",
+"gatewayClientId":"MAc35CupTZnqj02YoSWuO202cb5SHpLG",
+"gatewayClientSecret":"La8Wq90nddnbP5lG"
+});
+//bcmKey = undefined;
+}
+
+
+
+// This needs to be added AFTER the request definition
+
+function getRequest(){
+
+var from = document.getElementById('departureInput').value.split("- ")[1];
+var to = document.getElementById('arrivalInput').value.split("- ")[1];
+
+var promoCode = "";
+var login = [
+{
+  "id":window.userId,
+  "isPrimaryTraveler": true,
+  "nickName": "",
+  "avatarLogoUrl": "https://i.pinimg.com/originals/e7/da/8d/e7da8d8b6a269d073efa11108041928d.jpg",
+  "passengerTypeCode": "ADT",
+  "nationalityCountryCodes": [
+    "FR"
+  ],
+  "names": [
+    {
+      "firstName": window.userName,
+      "lastName": "Smith",
+      "title": "MS"
+    }
+  ],
+  "frequentFlyerCard": {
+    "companyCode": "ZZ",
+    "cardNumber": "8855"
+  },
+  "milesAssetBalance": [
+    {
+      "assetType": "Miles",
+      "assetValue": "10030"
+    }
+  ],
+  "gender": "female",
+  "dateOfBirth": "05/05/1950",
+  "contacts": [
+    {
+      "contactType": "Phone",
+      "category": "Other",
+      "countryPhoneExtension": "+93",
+      "number": "987654321"
+    },
+    {
+      "contactType": "Email",
+      "address": "marie@smith.com"
+    }
+  ],
+  "regulatoryDetails": [
+    {
+      "regulatoryApisType": "ApisDetailRegulatoryDocument",
+      "regulatoryDocument": {
+        "documentType": "passport",
+        "nationalityCode": "FR",
+        "number": "M08324244",
+        "issuanceCountryCode": "FR",
+        "expiryDate": "2031-05-05",
+        "issuanceLocation": "FR"
+      }
+    }
+  ],
+  "entitlementDocuments": [
+    {
+      "documentType": "SpanishResidentCard",
+      "travelerType": "spanishCitizen",
+      "identityCardNumber": "61974134J",
+      "postalCode": "070012",
+      "name": {
+        "firstName": "Marie",
+        "lastName": "Smith",
+        "secondLastName": ""
+      }
+    }
+  ]
+}
+]
+
+var request = {
+"search": {
+  "travelers": [
+    {
+      "passengerTypeCode": "ADT"
+    }
+  ],
+  "commercialFareFamilies": [
+    "ECONOMY",
+    "BUSINESS"
+  ],
+  "itineraries": [
+    {
+      "originLocationCode": from,
+      "destinationLocationCode": to,//selected_startDate
+      "departureDateTime": selected_startDate.getFullYear()+"-"+(selected_startDate.getMonth()+1)+"-"+selected_startDate.getDate()
+    }
+  ]
+},
+"portalFacts": [{"key":"corporateCodes", "value":"000001"}],
+"pointOfSale": "FR"
+}
+
+if (!!cffOverride) {
+request.search.commercialFareFamilies = cffOverride;
+}
+
+if(!!bcmKey) {
+request.bcmConfigKey = bcmKey;
+}
+if(!!staticConfig) {
+request.staticConfig = btoa(staticConfig);
+}
+if (!!bootstrapConfig) {
+request.bootstrapConfig = btoa(bootstrapConfig);
+}
+if(!!promoCode){
+request.search.promotion = {"code":promoCode}
+}
+
+if(!!returnDate){
+request.search.itineraries.push({
+  "originLocationCode": to,
+  "destinationLocationCode": from,
+  "departureDateTime": selected_endDate.getFullYear()+"-"+(selected_endDate.getMonth()+1)+"-"+selected_endDate.getDate()
+})
+}
+
+if(!!login){
+request.lightLogin = login
+}
+return request;
+}
+var urlServer = "http://localhost:3000";
+var urlRefX = "https://uat.digital.airline.amadeus.com/0e/0e-booking-va";
+function launchRefX(){
+    openWindowWithPost(urlRefX, getRequest())
+
+}
+function clik(cartId){
+openWindowWithPost("https://uat.digital.airline.amadeus.com/0e/0e-booking-va/shopping-cart?cartId="+cartId+"&type=cart", getRequest());
+//openWindowWithPost(urlRefX+"?lang=en-GB", request);
+}
+
+function openWindowWithPost(url, data) {
+var form = document.createElement("form");
+form.target = "_blank";
+form.method = "POST";
+form.action = url;
+form.style.display = "none";
+
+for (var key in data) {
+  var input = document.createElement("input");
+  input.type = "hidden";
+  input.name = key;
+  if (typeof data[key] === "string" || typeof data[key] === "boolean" || typeof data[key] === "number") {
+    input.value = data[key];
+  } else {
+    input.value = JSON.stringify(data[key]);
+  }
+  form.appendChild(input);
+}
+document.body.appendChild(form);
+form.submit();
+document.body.removeChild(form);
+}
+
+</script>
+
+<!-- AIRPORT LIST -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const airportListContainer = document.getElementById('airportListContainer');
+    const airportList = document.getElementById('airportList');
+    const departureInput = document.getElementById('departureInput');
+    const arrivalInput = document.getElementById('arrivalInput');
+
+
+            // Event listeners for user input on the departure and arrival inputs
+            departureInput.addEventListener('input', function () {
+                renderFilteredAirports('departure');
+            });
+            arrivalInput.addEventListener('input', function () {
+                renderFilteredAirports('arrival');
+            });
+
+            // Event listener for focusing back on the input fields
+            departureInput.addEventListener('focus', function () {
+                showSelectedAirport('departure');
+            });
+            arrivalInput.addEventListener('focus', function () {
+                showSelectedAirport('arrival');
+            });
+
+            // Event listener for clicking outside the input and airport list
+            document.addEventListener('click', function (event) {
+                const target = event.target;
+                if (!target.closest('#departureInput') && !target.closest('#arrivalInput') && !target.closest('#airportListContainer')) {
+                    hideAirportList();
+                }
+            });
+
+    // Function to show the selected airport when the input is focused
+    function showSelectedAirport(type) {
+        const activeAirportItem = document.querySelector(`.airport-item.active-${type}`);
+        if (activeAirportItem) {
+            const airportCity = activeAirportItem.querySelector('.airport-city-label').textContent;
+            const airportIataCode = activeAirportItem.querySelector('.airport-iata-code').textContent;
+            const inputFieldValue = `${airportCity} - ${airportIataCode}`;
+            
+            if (type === 'departure') {
+                departureInput.value = inputFieldValue;
+            } else if (type === 'arrival') {
+                arrivalInput.value = inputFieldValue;
+            }
+
+            airportListContainer.classList.add('visible');
+        }
+    }
+
+    // Function to hide the airport list container
+    function hideAirportList() {
+        airportListContainer.classList.remove('visible');
+    }
+
+    // Function to render the list of airports
+    function renderAirports(airportArray, type) {
+        // Clear the previous list
+        airportList.innerHTML = '';
+
+        if (airportArray.length === 0) {
+            const noResultsItem = document.createElement('li');
+            noResultsItem.textContent = 'No airports found';
+            airportList.appendChild(noResultsItem);
+        } else {
+            // Create and append list items for each airport
+            airportArray.forEach(airport => {
+                const listItem = document.createElement('li');
+                listItem.className = 'airport-li';
+
+                const airportItem = document.createElement('button');
+                airportItem.className = 'airport-item';
+
+                const airportDetails = document.createElement('div');
+                airportDetails.className = 'airport-details';
+
+                const airportLocation = document.createElement('div');
+                airportLocation.className = 'airport-location';
+
+                const cityLabel = document.createElement('h6');
+                cityLabel.className = 'airport-city-label';
+                cityLabel.textContent = airport.city;
+
+                const separator = document.createElement('h6');
+                separator.className = 'separator';
+                separator.textContent = ' - ';
+
+                const countryLabel = document.createElement('h6');
+                countryLabel.className = 'airport-country-label';
+                countryLabel.textContent = airport.country;
+
+                const airportName = document.createElement('div');
+                airportName.className = 'airport-name';
+                airportName.textContent = airport.name;
+
+                const iataCode = document.createElement('div');
+                iataCode.className = 'airport-iata-code';
+                iataCode.textContent = airport.iata_code;
+
+                airportLocation.appendChild(cityLabel);
+                airportLocation.appendChild(separator);
+                airportLocation.appendChild(countryLabel);
+
+                airportDetails.appendChild(airportLocation);
+                airportDetails.appendChild(airportName);
+
+                airportItem.appendChild(airportDetails);
+
+                // Add click event listener for airportItem buttons
+                airportItem.addEventListener('click', function () {
+                    // Remove 'active' class from all airport items
+                    document.querySelectorAll('.airport-item').forEach(item => {
+                        item.classList.remove('active-departure', 'active-arrival');
+                    });
+
+                    // Add 'active' class based on the input type
+                    airportItem.classList.add(`active-${type}`);
+
+                    // Set the city name and IATA code in the input field
+                    let inputFieldValue = `${airport.city}`;
+                    if (type === 'departure') {
+                        inputFieldValue += ` - ${airport.iata_code}`;
+                        departureInput.value = inputFieldValue;
+                    } else if (type === 'arrival') {
+                        inputFieldValue += ` - ${airport.iata_code}`;
+                        arrivalInput.value = inputFieldValue;
+                    }
+
+                    // Hide the airport list container
+                    hideAirportList();
+                });
+
+                airportItem.appendChild(iataCode);
+
+                listItem.appendChild(airportItem);
+                airportList.appendChild(listItem);
+            });
+        }
+    }
+
+    // Function to filter and render the list based on user input
+    function renderFilteredAirports(type) {
+        const departureValue = departureInput.value.toLowerCase();
+        const arrivalValue = arrivalInput.value.toLowerCase();
+
+        // Filter airports based on the input value in the city name
+        const filteredDepartureAirports = airports.filter(airport =>
+            airport.city.toLowerCase().startsWith(departureValue)
+        );
+
+        const filteredArrivalAirports = airports.filter(airport =>
+            airport.city.toLowerCase().startsWith(arrivalValue)
+        );
+
+        if (type === 'departure') {
+            renderAirports(filteredDepartureAirports, 'departure');
+        } else if (type === 'arrival') {
+            renderAirports(filteredArrivalAirports, 'arrival');
+        }
+
+        // Display or hide the airport list container based on input values
+        airportListContainer.classList.toggle('visible', (departureInput.value || arrivalInput.value));
+    }
+});
+
+
+</script>
+<!-- PAX SCRIPT -->
+<script>
+    // Initialize count variables
+    let adultCount = 0;
+    let childCount = 0;
+    let infantCount = 0;
+
+    // Function to update count and display
+    function updateCount(type, increment) {
+        switch (type) {
+            case 'adult':
+                adultCount += increment;
+                document.getElementById('adult-count').innerText = adultCount;
+                break;
+            case 'child':
+                childCount += increment;
+                document.getElementById('child-count').innerText = childCount;
+                break;
+            case 'infant':
+                infantCount += increment;
+                document.getElementById('infant-count').innerText = infantCount;
+                break;
+            default:
+                break;
+        }
+    }
+</script>
+
+<!-- NEWS SCRIPT -->
+<script>
+    function replaceContent() {
+        var element = document.getElementById("news-text");
+        var sentences = [
+            "パリ・シャルル・ド・ゴール空港（CDG）でのストライキの影響により、フライトが遅延する可能性があります。詳細はベトナム航空のモバイルアプリでご確認ください。",
+            "パリ・シャルル・ド・ゴール空港（CDG）でのストライキの影響により、フライトが遅延する可能性があります。詳細はベトナム航空のモバイルアプリでご確認ください。",
+            "パリ・シャルル・ド・ゴール空港（CDG）でのストライキの影響により、フライトが遅延する可能性があります。詳細はベトナム航空のモバイルアプリでご確認ください。"
+        ];
+
+        var count = 0;
+
+        setInterval(function () {
+            element.style.opacity = 0; // Set opacity to 0 before changing content
+
+            setTimeout(function () {
+                element.innerHTML = sentences[count];
+                element.style.opacity = 1; // Set opacity back to 1 after changing content
+                count++;
+
+                // Reset the count when all sentences have been displayed
+                if (count === sentences.length) {
+                    count = 0;
+                }
+            }, 1000); // Wait for 1 second (1000 milliseconds) before changing content
+        }, 5000); // Replace content every 5 seconds
+    }
+
+    // Call the function when the page loads
+    replaceContent();
+</script>
+
+<!-- <script>
+    let video = document.getElementById("stopover-video");
+    video.volume = 0;
+    video.playbackRate = 2;
+</script> -->
+<!-- TRANSLATE KR SCRIPT -->
+<script>
+    const inputs = document.querySelectorAll('input');
+
+inputs.forEach(input => {
+  input.addEventListener('click', function() {
+    // Scroll the form container into view smoothly
+    document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+<!-- FETCH USER FROM JSON -->
+<script>
+    // Function to load and display user data
+async function loadUserData() {
+    try {
+        // Fetch the JSON file
+        const response = await fetch('users-db/user1.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        // Parse the JSON data
+        const data = await response.json();
+        const user = data.user;
+        
+        // Update the DOM elements
+        document.getElementById('preferred-aaas').textContent = user.preferredAAAS;
+    } catch (error) {
+        console.error('Error loading user data:', error);
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', loadUserData);
+</script>
+
+<!-- FAQ script -->
+<script>
+    // We'll load and cache our FAQs data from the JSON file
+    let faqsDataCache = null;
+    // We'll store all matched results from the user’s search
+    let matchedResults = [];
+
+    // Fetch JSON data once and store in faqsDataCache
+    async function fetchFaqsData() {
+      if (!faqsDataCache) {
+        const response = await fetch("faqs.json"); // Replace with your JSON path
+        faqsDataCache = await response.json();
+      }
+      return faqsDataCache;
+    }
+
+    // Main search function
+    async function searchFaqs() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+
+      // Clear the highlighted results and matchedResults array each time
+      matchedResults = [];
+      document.getElementById("highlightedResults").innerHTML = "";
+
+      // If user cleared the input, just return (no results)
+      if (!query) return;
+
+      const faqsData = await fetchFaqsData();
+
+      // Loop through categories -> subCategories -> faqs
+      faqsData.faqsData.forEach((category) => {
+        category.subCategories.forEach((subCat) => {
+          subCat.faqs.forEach((faq) => {
+            const question = faq.question.toLowerCase();
+            if (question.includes(query)) {
+              // We found a match
+              matchedResults.push({
+                question: faq.question,
+                subCategory: subCat.title
+              });
+            }
+          });
+        });
+      });
+
+      // Display top 3 matches as “highlighted”
+      displayHighlightedResults(matchedResults);
+
+      // (Optional) You can also refresh "Users often look for" based on the query
+      // or leave it as some static or random suggestions. For example:
+      displayRelatedTopics();
+    }
+
+    // Display the first 3 matches in the “Suggested results” section
+    function displayHighlightedResults(results) {
+      const highlightedContainer = document.getElementById("highlightedResults");
+      highlightedContainer.innerHTML = "";
+
+      // Show first 3 results
+      const firstThree = results.slice(0, 3);
+      firstThree.forEach((item) => {
+        const div = document.createElement("div");
+        div.classList.add("mb-2");
+
+        const questionEl = document.createElement("p");
+        questionEl.innerText = item.question;
+        questionEl.style.marginBottom = 0;
+        questionEl.style.marginTop = "1rem";
+
+        const linkEl = document.createElement("a");
+        linkEl.href = "#"; // Fake link or real page link
+        linkEl.innerText = item.subCategory;
+
+        div.appendChild(questionEl);
+        div.appendChild(linkEl);
+        highlightedContainer.appendChild(div);
+      });
+    }
+
+    // When user clicks “See more results,” show the rest
+    function showMoreResults() {
+      // We already displayed the first 3
+      const remaining = matchedResults.slice(3);
+      const highlightedContainer = document.getElementById("highlightedResults");
+
+      // Append the remaining results
+      remaining.forEach((item) => {
+        const div = document.createElement("div");
+        div.classList.add("mb-2");
+
+        const questionEl = document.createElement("p");
+        questionEl.innerText = item.question;
+
+        const linkEl = document.createElement("a");
+        linkEl.href = "#"; // Fake link or real page link
+        linkEl.innerText = item.subCategory;
+
+        div.appendChild(questionEl);
+        div.appendChild(linkEl);
+        highlightedContainer.appendChild(div);
+      });
+
+      // Optionally hide the “See more results” button after expanding
+      document.getElementById("more-results").style.display = "none";
+    }
+
+    // Display 3 related (or random) topics in horizontal cards
+    // For a real scenario, you might select them based on the user’s query or from a special list.
+    async function displayRelatedTopics() {
+      const cardsContainer = document.getElementById("usersSearchCards");
+      cardsContainer.innerHTML = ""; // Clear old content
+
+      const faqsData = await fetchFaqsData();
+      // Flatten all subCategories or pick a few at random
+      let subCats = [];
+      faqsData.faqsData.forEach((cat) => {
+        cat.subCategories.forEach((subCat) => {
+          subCats.push(subCat);
+        });
+      });
+
+      // Shuffle the subCats array (simple randomization approach)
+      subCats.sort(() => 0.5 - Math.random());
+
+      // Take the first 3 subCategories
+      const topThreeSubs = subCats.slice(0, 3);
+
+      topThreeSubs.forEach((subCat) => {
+        // Create a Bootstrap card
+        const cardDiv = document.createElement("div");
+        cardDiv.classList.add("card");
+        cardDiv.style.width = "18rem"; // Adjust width as desired
+
+        // Card body
+        const cardBody = document.createElement("div");
+        cardBody.classList.add("card-body");
+
+        // Title
+        const cardTitle = document.createElement("h5");
+        cardTitle.classList.add("card-title");
+        cardTitle.innerText = subCat.title;
+
+        // Text
+        const cardText = document.createElement("p");
+        cardText.classList.add("card-text");
+        cardText.innerText = "A brief description or excerpt about this topic...";
+
+        // CTA button
+        const ctaButton = document.createElement("a");
+        ctaButton.classList.add("btn", "btn-primary");
+        ctaButton.href = "#"; // Or link to relevant page
+        ctaButton.innerText = "Learn more";
+
+        // Append elements to card
+        cardBody.appendChild(cardTitle);
+        cardBody.appendChild(cardText);
+        cardBody.appendChild(ctaButton);
+
+        cardDiv.appendChild(cardBody);
+
+        // Finally, add the card to the container
+        cardsContainer.appendChild(cardDiv);
+      });
+    }
+
+    // Optionally, handle the “See more results” button in the users-oriented section
+    document.getElementById("more-user-results").addEventListener("click", () => {
+      // You can decide what to do here—e.g., expand with more related topics or redirect somewhere else.
+      alert("Show more related topics or redirect to a dedicated page...");
+    });
+
+    // On first modal open, you could also pre-populate the related topics if you want:
+    document.addEventListener("DOMContentLoaded", () => {
+      displayRelatedTopics();
+    });
+  </script>
+
+  <!-- CREATE LOYALTY -->
+  <script>
+    function goToStep(stepNumber) {
+      // Hide all form steps
+      document.querySelectorAll(".form-step").forEach((el) => {
+        el.classList.remove("active");
+      });
+      // Deactivate all step indicators
+      document.querySelectorAll(".step-indicator .step").forEach((step) => {
+        step.classList.remove("step-active");
+      });
+  
+      // Show the selected step form
+      const stepId = "step" + stepNumber;
+      document.getElementById(stepId).classList.add("active");
+  
+      // Activate the selected step indicator
+      const indicator = document.querySelector(
+        `.step-indicator .step[data-step='${stepNumber}']`
+      );
+      if (indicator) {
+        indicator.classList.add("step-active");
+      }
+    }
+  
+    function finishRegistration() {
+      // Basic validation for the terms checkbox
+      const agreed = document.getElementById("checkTerms").checked;
+      if (!agreed) {
+        alert("You must agree to the terms before finishing.");
+        return;
+      }
+  
+      // Collect data from form inputs
+      const nameVal = document.getElementById("inputName").value.trim();
+      const emailVal = document.getElementById("inputEmail").value.trim();
+      const contactVal = document.getElementById("inputContact").value.trim();
+      const pictureInput = document.getElementById("inputPicture");
+  
+      // Show summary
+      document.getElementById("summaryName").textContent = nameVal;
+      document.getElementById("summaryEmail").textContent = emailVal;
+      document.getElementById("summaryContact").textContent = contactVal;
+      document.getElementById("summaryPicture").textContent = pictureInput.files.length
+        ? pictureInput.files[0].name
+        : "No file selected";
+  
+      // Hide the step forms
+      document.getElementById("step1").classList.remove("active");
+      document.getElementById("step2").classList.remove("active");
+      document.getElementById("step3").classList.remove("active");
+  
+      // Hide step indicators
+      document.querySelectorAll(".step-indicator .step").forEach((step) => {
+        step.classList.remove("step-active");
+      });
+  
+      // Show the summary section
+      document.getElementById("summarySection").style.display = "block";
+    }
+  </script>
+</body>
+</html>
