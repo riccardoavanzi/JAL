@@ -31,7 +31,7 @@ button {
   margin: auto;
   text-align: center;
   margin-bottom: 20px;
-  color: #0a1f95; }
+  color: #554a4a; }
 
 .section_subtitle {
   display: flex;
@@ -42,7 +42,7 @@ button {
   text-shadow: 0px 1px 10px rgba(27, 28, 28, 0.48); }
 
 .btn-primary {
-  background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%) !important;
+  background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%) !important;
   border: none;
   display: flex;
   justify-content: center;
@@ -57,17 +57,17 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #08ade9;
+  color: #5d461b;
   transition: transform ease-in-out 0.15s; }
   .btn-secondary i {
     margin-right: 5px; }
   .btn-secondary:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+    background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
     color: #FFFFFF; }
 
 .btn-tertiary {
-  background: #08ade9;
+  background: #5d461b;
   border: none;
   display: flex;
   justify-content: center;
@@ -78,11 +78,11 @@ button {
     margin-right: 5px; }
   .btn-tertiary:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+    background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
     color: #FFFFFF; }
 
 .tooltips {
-  background: #08ade9;
+  background: #5d461b;
   color: #FCFCFC; }
 
 #login-modal .modal-dialog .modal-content .modal-body form {
@@ -149,9 +149,9 @@ button {
   background-size: cover !important; }
 
 .header_container {
-  background: linear-gradient(187.13deg, rgba(14, 11, 11, 0.568) -51.2%, rgba(37, 38, 53, 0.678) 87.96%), url("https://images.unsplash.com/photo-1444412667101-4eccfdeeff07?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background: linear-gradient(187.13deg, rgba(14, 11, 11, 0.568) -51.2%, rgba(37, 38, 53, 0.678) 87.96%), url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat; }
   .header_container#destinations-container {
     background: linear-gradient(187.13deg, rgba(14, 11, 11, 0.568) -51.2%, rgba(37, 38, 53, 0.678) 87.96%), url("https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
@@ -279,7 +279,7 @@ button {
         color: white; }
         .multipurpose_component_desktop .tabs li button.active {
           background: #FCFCFC;
-          color: #08ade9;
+          color: #5d461b;
           font-weight: 600; }
   .multipurpose_component_desktop .mlt_container {
     width: fit-content;
@@ -308,7 +308,7 @@ button {
           .multipurpose_component_desktop .mlt_container .search_container .criteria li label {
             padding-left: 25px;
             font-size: 0.85em;
-            color: #08ade9; }
+            color: #5d461b; }
           .multipurpose_component_desktop .mlt_container .search_container .criteria li input {
             border: none;
             height: 100%;
@@ -338,7 +338,7 @@ button {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+        background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
         border-radius: 100px;
         padding: 1rem;
         height: fit-content;
@@ -380,7 +380,7 @@ button {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+        background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
         border-radius: 8px;
         padding: 10px; }
         .multipurpose_component_desktop .mlt_container .mmb_container .submit i {
@@ -415,7 +415,7 @@ button {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+        background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
         border-radius: 8px;
         padding: 10px; }
         .multipurpose_component_desktop .mlt_container .ssci_container .submit i {
@@ -450,7 +450,7 @@ button {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+        background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
         border-radius: 100px;
         padding: 10px; }
         .multipurpose_component_desktop .mlt_container .status_container .submit i {
@@ -538,7 +538,7 @@ button {
     background: #ece5e5c2;
     border-radius: 22px; }
     #bookAgain .bookagaintabs .nav-link {
-      color: #08ade9; }
+      color: #5d461b; }
       #bookAgain .bookagaintabs .nav-link.active {
         background: linear-gradient(180deg, #2b6362 0%, #389b93 100%);
         color: #FFFFFF;
@@ -611,7 +611,7 @@ button {
     background: #ece5e5c2;
     border-radius: 22px; }
     #bookAgain .bookagaintabs2 .nav-link {
-      color: #08ade9; }
+      color: #5d461b; }
       #bookAgain .bookagaintabs2 .nav-link.active {
         background: linear-gradient(180deg, #2b6362 0%, #389b93 100%);
         color: #FFFFFF;
@@ -740,7 +740,7 @@ button {
         justify-content: space-between; }
         #recent_searches .cards .card .continue_booking:hover {
           transform: scale(1);
-          background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+          background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
           color: #FFFFFF; }
           #recent_searches .cards .card .continue_booking:hover i {
             color: #FFFFFF; }
@@ -959,7 +959,7 @@ button {
         justify-content: space-between; }
         #ancillaries_shortcut .section_content .ancillaries_list .card .continue_booking:hover {
           transform: scale(1);
-          background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+          background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
           color: #FFFFFF; }
           #ancillaries_shortcut .section_content .ancillaries_list .card .continue_booking:hover i {
             color: #FFFFFF; }
@@ -978,7 +978,7 @@ button {
     border-radius: 8px;
     box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
     margin-top: 20px;
-    background: #0a1f95; }
+    background: #a74849; }
     .cross-sell-list .card .cross-sell-icon {
       display: flex;
       flex-direction: column;
@@ -990,13 +990,13 @@ button {
       margin-bottom: 15px;
       padding: 15px;
       border-radius: 100px;
-      background: #08ade9; }
+      background: #5d461b; }
       .cross-sell-list .card .cross-sell-icon i {
         font-size: 32px;
         color: #FFFFFF; }
     .cross-sell-list .card .card-title {
       font-weight: 600;
-      color: #08ade9; }
+      color: #FFFFFF; }
     .cross-sell-list .card .card-text {
       color: white; }
 
@@ -1019,7 +1019,7 @@ button {
   color: white !important;
   margin: 5rem auto;
   border-radius: 22px;
-  background-image: url("https://images.unsplash.com/photo-1529686342540-1b43aec0df75?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url("https://images.unsplash.com/photo-1504474298956-b1812fe43d92?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -1091,7 +1091,7 @@ button {
       justify-content: center;
       align-items: center;
       padding: 10px;
-      background: #08ade9;
+      background: #5d461b;
       box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
       border-radius: 100px; }
       #carousel_section .carousel .carousel-control-prev i {
@@ -1105,7 +1105,7 @@ button {
       justify-content: center;
       align-items: center;
       padding: 10px;
-      background: #08ade9;
+      background: #5d461b;
       box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
       border-radius: 100px; }
       #carousel_section .carousel .carousel-control-next i {
@@ -1113,7 +1113,7 @@ button {
 
 #corporate_section {
   padding: 100px 0px;
-  background: linear-gradient(187.13deg, rgba(14, 11, 11, 0.568) -51.2%, rgba(37, 38, 53, 0.678) 87.96%), url("https://ezytravellers.com/wp-content/uploads/2024/06/Ezytravellers-Vietnam-Airlines-Cabin-Crew.jpg");
+  background: linear-gradient(187.13deg, rgba(14, 11, 11, 0.568) -51.2%, rgba(37, 38, 53, 0.678) 87.96%), url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYAIiTrNumihFIFxJBZjLVlYnoSbNOtqS7tMZA-du35kntES8MGfytgt6esR47-YwdOc8iXpHU_bfgYcXRg4PRtBqxx5vAly1pCSnYq8wMpLYnw3B7FWlkRbpu5WPYWBS-HbNS4UbJBYc/s1600/JAL_staff_LG.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -1195,7 +1195,7 @@ button {
           grid-template-columns: auto auto;
           padding: 20px; }
           #multipurpose_component_mobile .form_mobile #pills-search-mobile .form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 2px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-search-mobile .form button {
@@ -1209,7 +1209,7 @@ button {
             font-size: 1.2em;
             color: #8a8a8a; }
             #multipurpose_component_mobile .form_mobile #pills-search-mobile .form button i {
-              color: #08ade9;
+              color: #5d461b;
               margin-right: 10px;
               font-size: #554a4a; }
       #multipurpose_component_mobile .form_mobile #pills-mmb-mobile {
@@ -1223,7 +1223,7 @@ button {
           flex-direction: column;
           justify-content: center; }
           #multipurpose_component_mobile .form_mobile #pills-mmb-mobile form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 5px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-mmb-mobile form input {
@@ -1251,7 +1251,7 @@ button {
           margin: 35px auto;
           padding: 20px; }
           #multipurpose_component_mobile .form_mobile #pills-ssci-mobile form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 5px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-ssci-mobile form input {
@@ -1276,7 +1276,7 @@ button {
           margin: 35px auto;
           padding: 20px; }
           #multipurpose_component_mobile .form_mobile #pills-status-mobile form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 5px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-status-mobile form input {
@@ -1312,19 +1312,19 @@ button {
           padding: 0rem;
           color: #8a8a8a; }
           #multipurpose_component_mobile .mobile-pills-tabs .nav-item .nav-link i {
-            color: #08ade9; }
+            color: #5d461b; }
         #multipurpose_component_mobile .mobile-pills-tabs .nav-item .active {
           background: none; }
         #multipurpose_component_mobile .mobile-pills-tabs .nav-item button {
           text-transform: uppercase;
-          color: #08ade9;
+          color: #5d461b;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center; }
           #multipurpose_component_mobile .mobile-pills-tabs .nav-item button i {
             font-size: 1.5em;
-            color: #0a1f95;
+            color: #8c713f;
             margin-bottom: 5px; }
           #multipurpose_component_mobile .mobile-pills-tabs .nav-item button p {
             margin: 0px; }
@@ -1354,10 +1354,10 @@ button {
         width: 12rem !important; } }
   @media only screen and (max-width: 425px) and (max-width: 768px) {
     #ancillaries_shortcut #aaas-title {
-      color: #0a1f95; } }
+      color: #8c713f; } }
   @media only screen and (max-width: 425px) and (max-width: 768px) {
     #ancillaries_shortcut .lead {
-      color: #0a1f95; } }
+      color: #8c713f; } }
 
 @media only screen and (max-width: 425px) {
   #cross_sell .cross-sell-list {
@@ -1399,7 +1399,7 @@ button {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: #08ade9;
+        background: #5d461b;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
         border-radius: 100px; }
         #carousel_section_mobile .carousel .carousel-control-prev i {
@@ -1413,7 +1413,7 @@ button {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: #08ade9;
+        background: #5d461b;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
         border-radius: 100px; }
         #carousel_section_mobile .carousel .carousel-control-next i {
@@ -1455,7 +1455,7 @@ button {
         border-radius: 8px;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507); }
   #videos .swiper-carousel .swiper-button-prev, #videos .swiper-carousel .swiper-button-next {
-    background: #08ade9;
+    background: #5d461b;
     color: #FFFFFF;
     width: 36px;
     height: 36px;
@@ -1507,7 +1507,7 @@ button {
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: #5e7fea;
+        color: #a74849;
         text-transform: uppercase; }
         #multipurpose_component_landing ul li a button {
           display: flex;
@@ -1520,13 +1520,13 @@ button {
         #multipurpose_component_landing ul li a i {
           font-size: 1.5em;
           margin-bottom: 10px;
-          color: #08ade9; }
+          color: #5d461b; }
       #multipurpose_component_landing ul li:last-child {
         border-right: none;
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px; }
       #multipurpose_component_landing ul li#send, #multipurpose_component_landing ul li#share {
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%); }
+        background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%); }
         #multipurpose_component_landing ul li#send a, #multipurpose_component_landing ul li#share a {
           color: #FFFFFF; }
         #multipurpose_component_landing ul li#send i, #multipurpose_component_landing ul li#share i {
@@ -1553,7 +1553,7 @@ button {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: #08ade9;
+        background: #5d461b;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
         border-radius: 100px; }
         #histogram .histogram_container .histogram_content .carousel .carousel-control-prev i {
@@ -1567,7 +1567,7 @@ button {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: #08ade9;
+        background: #5d461b;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
         border-radius: 100px; }
         #histogram .histogram_container .histogram_content .carousel .carousel-control-next i {
@@ -1580,7 +1580,7 @@ button {
           margin: 0px 0px 20px 5px;
           font-size: 1.2em;
           padding: 5px 10px;
-          background: #08ade9;
+          background: #5d461b;
           border-radius: 8px;
           color: #FFFFFF; }
         #histogram .histogram_container .histogram_content .carousel-inner .carousel-item ul {
@@ -1602,7 +1602,7 @@ button {
             #histogram .histogram_container .histogram_content .carousel-inner .carousel-item ul li .cheapest_chip {
               text-transform: uppercase;
               font-size: 0.85em;
-              background: #08ade9;
+              background: #5d461b;
               color: #FFFFFF;
               width: inherit;
               height: fit-content;
@@ -1621,12 +1621,12 @@ button {
               justify-content: center; }
               #histogram .histogram_container .histogram_content .carousel-inner .carousel-item ul li .month_price label {
                 font-size: 0.85em;
-                color: #5e7fea; }
+                color: #a74849; }
               #histogram .histogram_container .histogram_content .carousel-inner .carousel-item ul li .month_price .price {
                 font-size: 1.2em;
-                color: #08ade9; }
+                color: #5d461b; }
             #histogram .histogram_container .histogram_content .carousel-inner .carousel-item ul li .month_label {
-              color: #08ade9;
+              color: #5d461b;
               font-size: 0.85em; }
             #histogram .histogram_container .histogram_content .carousel-inner .carousel-item ul li.minimum {
               justify-content: flex-start; }
@@ -1666,16 +1666,16 @@ button {
             #dates .swiper-carousel #dates-histogram .swiper-wrapper .swiper-slide .date-content .from {
               font-size: 0.85em;
               text-transform: capitalize;
-              color: #5e7fea; }
+              color: #a74849; }
             #dates .swiper-carousel #dates-histogram .swiper-wrapper .swiper-slide .date-content .price {
               font-size: 1.2em;
-              color: #08ade9;
+              color: #5d461b;
               margin-bottom: 1.5rem; }
             #dates .swiper-carousel #dates-histogram .swiper-wrapper .swiper-slide .date-content .month {
               font-size: 0.85em;
-              color: #0a1f95; }
+              color: #8c713f; }
       #dates .swiper-carousel #dates-histogram .swiper-button-prev, #dates .swiper-carousel #dates-histogram .swiper-button-next {
-        background: #08ade9;
+        background: #5d461b;
         color: #FFFFFF;
         width: 36px;
         height: 36px;
@@ -1695,7 +1695,7 @@ button {
   #travelguide .travelguide-container .nav-pills .nav-link i {
     margin-right: .5rem; }
   #travelguide .travelguide-container .nav-pills .nav-link.active {
-    background-color: #0a1f95 !important;
+    background-color: #8c713f !important;
     border-radius: 100px; }
   #travelguide .travelguide-container .tab-content {
     display: flex;
@@ -1755,7 +1755,7 @@ button {
           #search_component_landing .mlt_container .search_container .criteria li label {
             padding-left: 25px;
             font-size: 0.85em;
-            color: #5e7fea; }
+            color: #a74849; }
           #search_component_landing .mlt_container .search_container .criteria li:last-child {
             border: none; }
           #search_component_landing .mlt_container .search_container .criteria li input {
@@ -1782,7 +1782,7 @@ button {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+        background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
         border-radius: 100px;
         padding: 10px; }
         #search_component_landing .mlt_container .search_container .submit i {
@@ -1842,10 +1842,10 @@ button {
         align-items: center; }
         #weather .forecast ul li .data .period {
           text-transform: uppercase;
-          color: #08ade9; }
+          color: #5d461b; }
         #weather .forecast ul li .data .temperature {
           font-size: 1.5em;
-          color: #08ade9;
+          color: #5d461b;
           font-weight: 600; }
 
 #partners {
@@ -2220,7 +2220,7 @@ button {
           grid-template-columns: auto auto;
           padding: 20px; }
           #multipurpose_component_mobile .form_mobile #pills-search-mobile .form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 2px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-search-mobile .form button {
@@ -2234,7 +2234,7 @@ button {
             font-size: 1.2em;
             color: #8a8a8a; }
             #multipurpose_component_mobile .form_mobile #pills-search-mobile .form button i {
-              color: #08ade9;
+              color: #5d461b;
               margin-right: 10px;
               font-size: #554a4a; }
       #multipurpose_component_mobile .form_mobile #pills-mmb-mobile {
@@ -2248,7 +2248,7 @@ button {
           flex-direction: column;
           justify-content: center; }
           #multipurpose_component_mobile .form_mobile #pills-mmb-mobile form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 5px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-mmb-mobile form input {
@@ -2276,7 +2276,7 @@ button {
           margin: 35px auto;
           padding: 20px; }
           #multipurpose_component_mobile .form_mobile #pills-ssci-mobile form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 5px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-ssci-mobile form input {
@@ -2301,7 +2301,7 @@ button {
           margin: 35px auto;
           padding: 20px; }
           #multipurpose_component_mobile .form_mobile #pills-status-mobile form label {
-            color: #08ade9;
+            color: #5d461b;
             font-size: 0.85em;
             margin: 0px 0px 5px 10px; }
           #multipurpose_component_mobile .form_mobile #pills-status-mobile form input {
@@ -2337,19 +2337,19 @@ button {
           padding: 0rem;
           color: #8a8a8a; }
           #multipurpose_component_mobile .mobile-pills-tabs .nav-item .nav-link i {
-            color: #08ade9; }
+            color: #5d461b; }
         #multipurpose_component_mobile .mobile-pills-tabs .nav-item .active {
           background: none; }
         #multipurpose_component_mobile .mobile-pills-tabs .nav-item button {
           text-transform: uppercase;
-          color: #08ade9;
+          color: #5d461b;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center; }
           #multipurpose_component_mobile .mobile-pills-tabs .nav-item button i {
             font-size: 1.5em;
-            color: #0a1f95;
+            color: #8c713f;
             margin-bottom: 5px; }
           #multipurpose_component_mobile .mobile-pills-tabs .nav-item button p {
             margin: 0px; }
@@ -2417,7 +2417,7 @@ button {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: #08ade9;
+        background: #5d461b;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
         border-radius: 100px; }
         #carousel_section_mobile .carousel .carousel-control-prev i {
@@ -2431,7 +2431,7 @@ button {
         justify-content: center;
         align-items: center;
         padding: 10px;
-        background: #08ade9;
+        background: #5d461b;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507);
         border-radius: 100px; }
         #carousel_section_mobile .carousel .carousel-control-next i {
@@ -2549,7 +2549,7 @@ button {
     padding-left: .5rem; }
 
 #language-dropdown-container ul li a {
-  color: #08ade9; }
+  color: #5d461b; }
 
 #logout {
   font-size: 0.85em;
@@ -2631,7 +2631,7 @@ button {
         width: 18rem; }
         .continent-container .continent-content .cards .card .card-title {
           font-weight: 600;
-          color: #0a1f95; }
+          color: #8c713f; }
         .continent-container .continent-content .cards .card img {
           border-radius: 16px 16px 0px 0px; }
 
@@ -2718,7 +2718,7 @@ button {
         margin-bottom: 0rem; }
     #chat-container .chat-buttons .button-container {
       padding: .3rem;
-      border: 1px solid #08ade9;
+      border: 1px solid #ece5e5c2;
       border-radius: 100px; }
       #chat-container .chat-buttons .button-container #displayChat {
         border-radius: 100px;
@@ -2727,7 +2727,7 @@ button {
         justify-content: center;
         width: fit-content;
         padding: .7rem;
-        background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+        background: #ece5e5c2;
         box-shadow: 0px 4px 30px rgba(225, 225, 225, 0.507); }
   #chat-container #chat-dialogue {
     display: none;
@@ -2750,7 +2750,7 @@ button {
         flex-direction: row;
         align-items: center; }
         #chat-container #chat-dialogue .chat-dialogue-header .status .img {
-          background: linear-gradient(180deg, #2b6362 0%, #389b93 100%);
+          background: #ece5e5c2;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -2902,7 +2902,7 @@ button {
         width: fit-content;
         margin: 0rem auto .5rem auto; }
         #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-name .month {
-          color: #08ade9;
+          color: #5d461b;
           margin-right: .3rem;
           font-weight: 600; }
         #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-name .year {
@@ -2951,13 +2951,13 @@ button {
             #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item:hover {
               background: #ece5e5c2; }
             #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_start {
-              background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%); }
+              background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%); }
               #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_start .day-number {
                 color: #FFFFFF; }
               #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_start .day-price {
                 color: #FFFFFF; }
             #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_end {
-              background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%); }
+              background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%); }
               #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_end .day-number {
                 color: #FFFFFF; }
               #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_end .day-price {
@@ -2965,11 +2965,11 @@ button {
             #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_inbetween {
               background: #ece5e5c2; }
               #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_inbetween .day-number {
-                color: #08ade9; }
+                color: #5d461b; }
               #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-slide .calendar-content .month-block-container .month-block-content .month-grid .day-item.selected_dates_inbetween .day-price {
-                color: #08ade9; }
+                color: #5d461b; }
   #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-button-next, #datePickerModal .modal-dialog .modal-content .modal-body #calendar-container .mySwiper .swiper-button-prev {
-    background: linear-gradient(180deg, #2b6362 0%, #389b93 100%);
+    background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
     color: #FFFFFF;
     padding: 1.5rem;
     border-radius: 100px;
@@ -3103,7 +3103,7 @@ button {
         border-radius: 100px; }
         #pax-class .modal-dialog .modal-content .modal-body .pax-container .counter-container button i {
           font-size: 1.5em;
-          color: #08ade9; }
+          color: #5d461b; }
       #pax-class .modal-dialog .modal-content .modal-body .pax-container .counter-container .pax-number {
         font-size: 1.2em;
         margin: 0rem .5rem; }
@@ -3256,7 +3256,7 @@ button {
               padding: .2rem .5rem;
               background: #a8d1ec;
               border-radius: 22px;
-              color: #0a1f95;
+              color: #8c713f;
               font-weight: 600;
               line-height: 1rem; }
           #account-pill-container .account-left .account-left-content .account-details .user-details .name .miles {
@@ -3374,7 +3374,7 @@ button {
         justify-content: space-between; }
         #aaas-personalized .section_content .ancillaries_list .card .continue_booking:hover {
           transform: scale(1);
-          background: linear-gradient(135deg, #1391bf 20%, #0a1f95 80%);
+          background: linear-gradient(135deg, #9c6d16 20%, #8c713f 80%);
           color: #FFFFFF; }
           #aaas-personalized .section_content .ancillaries_list .card .continue_booking:hover i {
             color: #FFFFFF; }
@@ -3512,3 +3512,55 @@ button {
 #pills-calculator .calculator-container .calculator-content .calculator-content-main .table th {
   background-color: #f4f4f4;
   font-weight: bold; }
+
+.step-indicator {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem; }
+  .step-indicator .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33%;
+    position: relative; }
+    .step-indicator .step::before {
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: #dee2e6;
+      position: absolute;
+      top: 50%;
+      left: -50%;
+      z-index: -1; }
+    .step-indicator .step:first-child::before {
+      content: none; }
+
+.step-circle {
+  background-color: #adb5bd;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem; }
+
+.step-active .step-circle {
+  background-color: #0d6efd; }
+.step-active span.step-label {
+  font-weight: 600;
+  color: #0d6efd; }
+
+/* Hide steps by default */
+.form-step {
+  display: none; }
+  .form-step.active {
+    display: block;
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem; }
+
+/* Summary section hidden by default */
+#summarySection {
+  display: none; }
