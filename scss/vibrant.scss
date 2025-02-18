@@ -1,6 +1,6 @@
 // FONT IMPORT
 @import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 // VARIABLES IMPORT
 @import'variables';
 
@@ -8,7 +8,7 @@
             // GENERIC STYLES
 
 body{
-    font-family: $vibrant !important;
+    font-family: $montserrat !important;
     background: $almost_white;
     // .btn-lg{
     //     border-radius: $radius !important;
