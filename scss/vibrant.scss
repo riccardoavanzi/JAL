@@ -242,8 +242,16 @@ button{
 }
 .navbar-toggler-icon{
     color: $white;
-    
 }
+
+.navbar-brand{
+    @media only screen and (max-width: 425px){
+        img{
+            content: url('/assets/img/logo/logo-mobile.png') !important;
+        }
+    }
+}
+
 //--------  DESKTOP MENU
 .menu{
     li{

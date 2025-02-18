@@ -176,6 +176,10 @@ button {
 .navbar-toggler-icon {
   color: #FFFFFF; }
 
+@media only screen and (max-width: 425px) {
+  .navbar-brand img {
+    content: url("/assets/img/logo/logo-mobile.png") !important; } }
+
 .menu li {
   margin: auto 10px; }
 .menu a {
