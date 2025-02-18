@@ -247,7 +247,7 @@ button{
 .navbar-brand{
     @media only screen and (max-width: 425px){
         img{
-            content: url('/assets/img/logo/logo-mobile.png') !important;
+            content: url('assets/img/logo/logo-mobile.png') !important;
         }
     }
 }
