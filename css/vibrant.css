@@ -178,7 +178,8 @@ button {
 
 @media only screen and (max-width: 425px) {
   .navbar-brand img {
-    content: url("assets/img/logo/logo-mobile.png") !important; } }
+    width: 200px !important;
+    object-fit: cover !important; } }
 
 .menu li {
   margin: auto 10px; }
