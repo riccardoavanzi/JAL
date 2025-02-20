@@ -1,0 +1,92 @@
+{
+    "destinationName": "ローマ",
+    "destinationLowestPrice": "500$",
+    "destinationSubtitle": "永遠の都ローマを発見",
+    "destinationDescription": "イタリアの首都ローマの豊かな歴史と時代を超えた美しさに浸りましょう。「永遠の都」として知られるローマは、古代遺跡、ルネサンス芸術、そして絶品の料理が融合した魅力的な街です。コロッセオ、バチカン市国、トレヴィの泉などの象徴的なランドマークを巡りましょう。趣のある街並みを散策し、本場のイタリアンジェラートを味わい、広場の活気あふれる雰囲気を楽しんでください。バチカン美術館からトラステヴェレの美しい通りまで、ローマは忘れられない冒険とイタリアの壮大な過去を垣間見る機会を提供します。",
+    "destinationPicture": "linear-gradient(187.13deg, rgba(4, 92, 164, 0.533) -51.2%, rgba(19, 37, 46, 0.445) 87.96%), url('https://images.unsplash.com/photo-1509024644558-2f56ce76c490?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NjI0NjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODc2MTg5OTh8&ixlib=rb-4.0.3&q=80&w=1080')",
+
+    "attraction1title": "コロッセオ",
+    "attraction1content": "古代ローマの円形闘技場であるコロッセオで、過去にタイムスリップしましょう。かつて壮大な剣闘士の戦いや豪華なショーが開催された場所です。その壮大な建築に驚嘆し、歴史の舞台となった空間を想像してください。",
+    "attraction1image": "https://images.unsplash.com/photo-1524515725116-3fcfdc50969f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NjI0NjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODcwMDY4NzB8&ixlib=rb-4.0.3&q=80&w=1080",
+
+    "attraction2title": "バチカン市国",
+    "attraction2content": "世界最小の独立国家、バチカン市国の霊的・芸術的な宝物を探索しましょう。サン・ピエトロ大聖堂を訪れ、バチカン美術館を巡り、壮麗なシスティーナ礼拝堂を鑑賞してください。",
+    "attraction2image": "https://images.unsplash.com/photo-1616631847981-99a3039a4644?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NjI0NjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODcwMDY5MDF8&ixlib=rb-4.0.3&q=80&w=1080",
+
+    "attraction3title": "トレヴィの泉",
+    "attraction3content": "願いを込めてトレヴィの泉にコインを投げましょう。バロック様式の傑作であり、幸運のシンボルでもあります。精巧な彫刻を鑑賞し、この象徴的なランドマークの幻想的な雰囲気を楽しんでください。",
+    "attraction3image": "https://images.unsplash.com/photo-1657042816910-7f1875a99f73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NjI0NjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODcwMDY3NzZ8&ixlib=rb-4.0.3&q=80&w=1080",
+
+    "video1": "https://www.youtube.com/embed/5DcA4BePBdA",
+    "video2": "https://www.youtube.com/embed/t5j2zIlbzUE",
+    "video3": "https://www.youtube.com/embed/Pq7Yo-CZGOg",
+    "video4": "https://www.youtube.com/embed/N7Wk2gTBqY4",
+
+    "destinationContentImage": "https://images.unsplash.com/photo-1593548615309-5a45c504f994?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NjI0NjZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODcwMDY2Mjd8&ixlib=rb-4.0.3&q=80&w=1080",
+    "destinationLead": "永遠の都ローマは、その時代を超えた魅力と素晴らしい文化遺産で訪れる人々を魅了します。古代遺跡を巡り、世界的に有名な芸術を鑑賞し、本格的なイタリア料理を味わいながら、ローマの歴史、文化、ロマンスの魅力を存分に楽しんでください。カルボナーラ、マルゲリータピザ、ジェラートなどの伝統料理を堪能し、ローマ人が長年愛する「ドルチェ・ヴィータ」のライフスタイルを体験しましょう。",
+
+    "hotel": "ローマの厳選されたホテルで、快適さとエレガンスを満喫しましょう。市内の象徴的な観光スポットの近くに位置し、最高のおもてなしをご提供します。",
+    "car": "ローマの魅力を存分に楽しみ、周辺の田園風景を自由に探索できる信頼性の高いレンタカーサービスをご利用ください。",
+    "event": "一年を通じてローマでは、オペラ公演、野外コンサート、美術展など、多彩な文化イベントが開催されています。",
+
+    "month1label": "1月",
+    "month2label": "2月",
+    "month3label": "3月",
+    "month4label": "4月",
+    "month5label": "5月",
+    "month6label": "6月",
+    "month7label": "7月",
+    "month8label": "8月",
+    "month9label": "9月",
+    "month10label": "10月",
+    "month11label": "11月",
+    "month12label": "12月",
+
+    "poi1title": "フォロ・ロマーノ",
+    "poi1description": "古代ローマの中心地フォロ・ロマーノを探検しましょう。かつての神殿、バジリカ、行政機関の遺跡が点在し、ローマ帝国の栄華を感じられます。",
+    
+    "poi2title": "ナヴォーナ広場",
+    "poi2description": "ローマで最も美しい広場の一つ、ナヴォーナ広場の活気に浸りましょう。バロック様式の噴水やストリートパフォーマンス、魅力的なカフェを楽しんでください。",
+    
+    "poi3title": "スペイン階段",
+    "poi3description": "ローマの有名な待ち合わせスポット、スペイン階段を登りましょう。美しい花々が飾られ、頂上からのパノラマビューを楽しめます。近隣の高級ブティックでショッピングも可能です。",
+
+    "food1title": "カルボナーラ",
+    "food1description": "卵、チーズ、パンチェッタ、黒胡椒を使った濃厚で風味豊かなカルボナーラを堪能しましょう。地元のワインと一緒に楽しむのがおすすめです。",
+    
+    "food2title": "マルゲリータピザ",
+    "food2description": "シンプルながら絶品のナポリ風ピザ、マルゲリータ。トマトソース、モッツァレラチーズ、新鮮なバジル、オリーブオイルをトッピングした逸品です。",
+    
+    "food3title": "ジェラート",
+    "food3description": "本場イタリアのジェラートを味わいましょう。チョコレートやピスタチオなどの定番フレーバーから、ストラッチャテッラやラズベリーソルベなどのユニークな組み合わせも楽しめます。",
+
+    "event1title": "共和国記念日（Festa della Repubblica）",
+    "event1description": "6月2日はイタリアの共和国記念日。盛大な軍事パレードや愛国的なセレモニー、街中での華やかな祝祭を楽しめます。",
+    
+    "event2title": "ローマ・ジャズ・フェスティバル",
+    "event2description": "世界的なジャズアーティストや地元ミュージシャンによる演奏を楽しめるローマ・ジャズ・フェスティバル。市内各地で開催されます。",
+    
+    "event3title": "エステート・ロマーナ",
+    "event3description": "ローマの夏を彩るイベント「エステート・ロマーナ」。音楽、演劇、ダンス、映画上映など、歴史的な会場で開催される文化イベントが目白押しです。",
+
+    "mainTitle": "飛行機で行こう ",
+    "mainTitleSecond": " まで格安で",
+    "bestDeals": "お得な旅行プラン",
+    "from": "出発地",
+    "top3": "絶対に訪れたいローマのトップ3スポット",
+    "makesure": "見逃さないようにしましょう",
+    "videostitle": "ローマに関する動画",
+    "videostitle2": "インスピレーションを得るために",
+    "allyouwant": "ローマに関するすべての情報",
+    "weathertitle": "ローマの天気は？",
+    "weathersub": "年間の天気予報。提供：",
+    "travelguide": "旅行ガイド",
+    "travelsub": "おすすめの観光地や食事スポットをご提案します。",
+    "poititle": "観光スポット",
+    "fd": "食べ物＆飲み物",
+    "events": "イベント",
+    "help": "お困りですか？",
+    "helpsub": "ローマをより楽しむためのサービスをご案内します。",
+    "discoverbtn": "さらに詳しく",
+    "knowbtn": "もっと知る"
+}
