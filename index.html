@@ -2841,7 +2841,7 @@ inputs.forEach(input => {
     async function loadUserData() {
         try {
             // Fetch the JSON file
-            const response = await fetch('users-db/user1.json');
+            const response = await fetch('/users-db/user1.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -2858,7 +2858,8 @@ inputs.forEach(input => {
     }
 
     // Call the function when the page loads
-    document.addEventListener('DOMContentLoaded', loadUserData);
+    // document.addEventListener('DOMContentLoaded', loadUserData);
+    loadUserData()
 </script>
 
 <!-- FAQ script -->
