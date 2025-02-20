@@ -2837,28 +2837,28 @@ inputs.forEach(input => {
 
 <!-- FETCH USER FROM JSON -->
 <script>
-    // Function to load and display user data
-async function loadUserData() {
-    try {
-        // Fetch the JSON file
-        const response = await fetch('users-db/user1.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        // Function to load and display user data
+    async function loadUserData() {
+        try {
+            // Fetch the JSON file
+            const response = await fetch('users-db/user1.json');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            // Parse the JSON data
+            const data = await response.json();
+            const user = data.user;
+            
+            // Update the DOM elements
+            document.getElementById('preferred-aaas').textContent = user.preferredAAAS;
+        } catch (error) {
+            console.error('Error loading user data:', error);
         }
-        
-        // Parse the JSON data
-        const data = await response.json();
-        const user = data.user;
-        
-        // Update the DOM elements
-        document.getElementById('preferred-aaas').textContent = user.preferredAAAS;
-    } catch (error) {
-        console.error('Error loading user data:', error);
     }
-}
 
-// Call the function when the page loads
-document.addEventListener('DOMContentLoaded', loadUserData);
+    // Call the function when the page loads
+    document.addEventListener('DOMContentLoaded', loadUserData);
 </script>
 
 <!-- FAQ script -->
